@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Pelican" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Home{% endblock title %} | Innovation Options</title>
+    <meta name="description" content="{% block description %}Keep Your Options Open.  Protect your ideas with an Innovation Option.{% endblock description %}"/>
+    <meta property="og:url" content="{{ SITEURL }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/{% block image %}logo.png{% endblock image %}" />
+    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/bootstrap.min.css" rel="stylesheet" >
+    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/bootstrap-icons.min.css" rel="stylesheet" >
+    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/favicon.png" rel="icon" type="image/x-icon" >
+    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/{{ CSS_FILE }}" rel="stylesheet" />
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/bootstrap.bundle.min.js"></script>
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/posthog.js"></script>
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/main.js"></script>
+    {% block styles %}
+    {% endblock styles %}
+    {% block scripts %}
+    {% endblock scripts %}
+  </head>
+  <body>
+    {% block header %}
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large">
+          <div class="container">
+            <a class="navbar-brand" href="index.html">Innovation Options</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+              <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Menu</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class='nav-item'>
+                    <a href='calculator.html' class='nav-link {% block calculatorActive %}{% endblock calculatorActive %}'>Calculator</a>
+                  </li>
+                  <li class='nav-item'>
+                    <a href='articles.html' class='nav-link {% block articlesActive %}{% endblock articlesActive %}'>Articles</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+    {% endblock header %}
+
+    {% block content %}
+    {% endblock content %}
+
+    {% block footer %}
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top container">
+        <ul class="nav col-md-4 justify-content-start">
+        {% for p in pages %}
+          <li class="nav-item"><a href='{{p.url}}' class="nav-link {% if page==p %}active{% endif %}text-body-secondary">{{p.title}}</a></li>
+        {% endfor %}
+        </ul>
+        <span class="mb-0 text-muted">&copy; 2024 Innovation Options LLC</span>
+      </footer>
+    {% endblock footer %}
+  </body>
+</html>

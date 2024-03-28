@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title%}Articles{% endblock title%}
+
+{% block articlesActive %}active{% endblock articlesActive %}
+
+{% block content %}
+  <div class='container my-5'>
+    <header class='my-3'>
+      <h2>
+        Articles
+      </h2>
+      <p class='lead my-3'>
+        Learn more about Innovation Options and how they work.
+      </p>
+    </header>
+    <main class=''>
+      <table class='table table-hover'>
+        <tbody>
+          {% for article in articles|sort(attribute="date") %}
+            <tr>
+              <td><a href='{{article.url}}'>{{article.title}}</a><br>
+              {{article.summary}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </main>
+  </div>
+{% endblock content %}

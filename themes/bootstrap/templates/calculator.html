@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% block title%}Calculator{% endblock title%}
+
+{% block styles %}
+  <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/calculator.css" rel="stylesheet" type="text/css">
+{% endblock styles %}
+
+{% block scripts %}
+  <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/calculator.js"></script>
+{% endblock scripts %}
+
+{% block calculatorActive %}active{% endblock calculatorActive %}
+
+{% block content %}
+  <main class='container'>
+    <div class='row justify-content-center my-5'>
+      <div class='col-lg-4 m-3'>
+        <div class='card'>
+          <div class='card-header'>
+            <h4>Input</h4>
+          </div>
+          <div class='card-body'>
+            <div class='row my-3 align-items-center justify-content-between'>
+              <div class='col-4'>
+                <label for='term' class='form-label'>
+                  Term
+                </label>
+              </div>
+              <div class='col-8'>
+                <select id='term' class='form-select'>
+                  <option value='One Quarter'>One Quarter</option>
+                  <option value='Six Months'>Six Months</option>
+                  <option value='One Year'>One Year</option>
+                  <option value='Year and a Half'>Year and a Half</option>
+                  <option value='Two Years'>Two Years</option>
+                  <option value='Four Years'>Four Years</option>
+                </select>
+              </div>
+            </div>
+            <div class='row my-3 align-items-center justify-content-between'>
+              <div class='col-4'>
+                <label for='offset' class='form-label'>
+                  Offset
+                </label>
+              </div>
+              <div class='col-8'>
+                <select id='offset' class='form-select'>
+                  <option value='Weekly'>Weekly</option>
+                  <option value='Bi-Weekly'>Bi-Weekly</option>
+                  <option value='Monthly'>Monthly</option>
+                  <option value='Bi-Monthly'>Bi-Monthly</option>
+                  <option value='Quarterly'>Quarterly</option>
+                  <option value='Semi-Annually'>Semi-Annually</option>
+                  <option value='Annually'>Annually</option>
+                </select>
+              </div>
+            </div>
+            <div class='row my-3 align-items-center justify-content-between'>
+              <div class='col-4'>
+                <label for='strike' class='form-label'>
+                  Strike
+                </label>
+              </div>
+              <div class='col-8'>
+                <input id='strike' type='tel' value='5' name='strike' class='form-control'>
+              </div>
+            </div>
+            <div class='row my-3 align-items-center justify-content-between'>
+              <div class='col-4'>
+                <label for='market' class='form-label'>
+                  Market
+                </label>
+              </div>
+              <div class='col-8'>
+                <input id='market' type='tel' value='100' name='market' class='form-control'>
+              </div>
+            </div>
+            <div class='d-grid gap-2 m-3'>
+              <input id="calculate" type="button" value="Calculate" class="btn btn-lg btn-outline-primary" onclick="calculateOption();" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='col-lg-4 m-3'>
+        <div class='card'>
+          <div class='card-header'>
+            <h4>Output</h4>
+          </div>
+          <div class='card-body'>
+            <div class='row my-3 align-items-center justify-content-between'>
+              <div class='col-4'>
+                <label for='starting-value' class='form-label'>
+                  Value
+                </label>
+              </div>
+              <div class='col-8'>
+                <input id='starting-value' class="form-control" type="text" value="" readonly>
+              </div>
+            </div>
+            <div class='row my-3 align-items-center justify-content-between'>
+              <div class='col-4'>
+                <label for='sigma' class='form-label'>
+                  Sigma
+                </label>
+              </div>
+              <div class='col-8'>
+                <input id='sigma' type='tel' value='' name='sigma' class='form-control'>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='mt-5 text-center'>
+      <h4>
+        <span id='tree-title'></span>
+      </h4>
+    </div>
+      <span id='valuation-tree'></span>
+    </div>
+    <br>
+    <br>
+    <br>
+  </main>
+{% endblock content %}
