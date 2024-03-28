@@ -1,5 +1,5 @@
 Title: Revenue Projection Notes
-Status: published
+Status: draft
 Date: 2024-01-02
 
 For instance, Dave McClure of [500 Startups](http://500.co) recently went on a tirade noting that investors should not be asking for revenue projections from startups because they are nothing but lies.
