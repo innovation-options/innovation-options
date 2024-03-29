@@ -8,7 +8,7 @@ My client was following a common pattern: the innovation team formulates ideas b
 
 Consider the following matrix: on the vertical axis we have the decision on whether or not to pursue an idea, either ‘GO’ or ‘NO-GO’. Then, on the horizontal axis, we have the results from the choice: GO was Wrong (the idea wasn’t valid) or GO was Right (the idea was valid).
 
-![](https://innovation-options.s3.us-west-1.amazonaws.com/img/1*Vrp4RQWgarr5sCrEbT5ttQ.png)
+![]({static}decision_result_matrix.png)
 
 This results in four possible outcomes for any given idea:
 
@@ -19,7 +19,7 @@ This results in four possible outcomes for any given idea:
 
 Under a traditional budget-allocation model, innovation is only measured along the Positive (ie, the “GO”) axis. Ideas that meet or exceed expectations are considered Successes, those which fall short are Failures, and [here endeth the lesson](https://www.youtube.com/watch?v=vbkDa0OZetk). The Negative (“NO-GO”) axis is totally ignored, because those ideas do not receive funding _by definition_.
 
-The danger in this approach lies in the Opportunity Cost quadrant, where a firm misses out on the “next big thing” and cedes ground to competitors and new entrants. Unlike the direct cost of Failure, the Opportunity Cost of missing a disruptive innovation can bankrupt even the most dominant firms astonishingly quickly. Yet disruptive innovations will never show a compelling ROI precisely _because_ they are disruptive--AKA “[The Innovator’s Dilemma](https://en.wikipedia.org/wiki/The_Innovator%27s_Dilemma)”. Forecasting works with [continuous innovations](/the-three-innovation-types) because there are years of data and experience from which we can draw reasonable inferences about the near-term future. But discontinuous innovations have no such history and require an alternative approach if they are ever to be considered. Fortunately, the table itself suggests just such an alternative.
+The danger in this approach lies in the Opportunity Cost quadrant, where a firm misses out on the “next big thing” and cedes ground to competitors and new entrants. Unlike the direct cost of Failure, the Opportunity Cost of missing a disruptive innovation can bankrupt even the most dominant firms astonishingly quickly. Yet disruptive innovations will never show a compelling ROI precisely _because_ they are disruptive--AKA “[The Innovator’s Dilemma](https://en.wikipedia.org/wiki/The_Innovator%27s_Dilemma)”. Forecasting works with [continuous innovations](the-three-innovation-types) because there are years of data and experience from which we can draw reasonable inferences about the near-term future. But discontinuous innovations have no such history and require an alternative approach if they are ever to be considered. Fortunately, the table itself suggests just such an alternative.
 
 Those with a background in statistics will recognize the decision/result matrix as a [binary classification](https://en.wikipedia.org/wiki/Binary_classification) table, extensively used in machine learning algorithms, clinical trials, and a host of other predictive modeling applications. Unlike the traditional approach where we seek to identify existing trends and extend them into the future, the binary classification approach takes assumptions and tests them against reality to reach conclusions. **The ultimate goal is an effective _Innovation Engine_ that improves not by becoming a better fortune-teller, but by improving classification through the rigorous and disciplined elimination of error.**
 
@@ -36,7 +36,7 @@ And this is where it gets difficult--because to get to the Truth we must embrace
 
 Fortunately, we can adopt predictive modeling metrics for this purpose. The following contingency table, called a “[confusion matrix](https://en.wikipedia.org/wiki/Confusion_matrix)”, outlines various ratios used to improve a classifier.
 
-![](https://innovation-options.s3.us-west-1.amazonaws.com/img/1*qbvg7ab-ZI8IETBb7ksjYg.png)
+![]({static}confusion_matrix.png)
 
 Some key metrics on which we can focus include:
 

@@ -1,24 +1,28 @@
 Title: The Three Innovation Types
 Date: 2024-01-03
+Slug: the-three-innovation-types
 Summary: Describing the differences between the Three Innovation Types and their impact on corporate governance.
 
 A personal embarrassment precipitated my appreciation for the three innovation types. I was presenting to a large industrial firm, explaining the latest Innovation Management trends and extolling their use throughout the firm. Concluding my (rather presumptive) presentation, a veteran product manager rebuked me, saying, “Look, it’s obvious you don’t know anything about our industry. Maybe your approach is necessary in tech, but if I save $50 off my BOM through some new process I’m going to sell 10,000 more units. It is as predicable as the sun rising tomorrow. This is how I’ve innovated for 30 years and it’s kept us on top of our industry just fine.” (Left unstated was, “so take this crap and stuff it.”) I sheepishly backed off, murmuring something about disruptive versus sustaining innovation before quickly shifting topics.
 
 The PM was right, of course--he had innovated throughout his entire career without any need for “fail-fast” this, or “customer development” that. Yet my face-saving comment was also accurate. The firm was facing significant threats from new technologies, and what worked for the last 30 might not take them through the next three. The disconnect was that we were using the same term to refer to different innovation types.
 
-Innovation is not homogenous. In his seminal work “[The Innovator’s Dilemma](https://en.wikipedia.org/wiki/The_Innovator%27s_Dilemma)”, Clayton Christensen discussed the three main forms of innovation: sustaining, disruptive, and revolutionary (yep, there’s a third!) Each type has specific characteristics which in turn suggest specific management approaches. In this piece I’ll describe the innovation types themselves, show you how to identify them, and touch upon the management approach each requires.
-
-To orient ourselves, let’s use the following Venn diagram representing technological and business model continuity. The yellow circle represents a continuous business model, while the blue signifies a discontinuous technological shift (with outside of each yellow and blue set representing discontinuity and continuity of business model and technology, respectively). For clarity, I’m restricting our examples to the typical case of technological shifts, but they could also be political or regulatory, among others.
-
-![](https://innovation-options.s3.us-west-1.amazonaws.com/img/1*KUeCXX6YOWlnu9rAs6hNVA.png)
+Innovation is not homogenous. In his seminal work “[The Innovator’s Dilemma](https://en.wikipedia.org/wiki/The_Innovator%27s_Dilemma)”, Clayton Christensen discussed the three main forms of innovation: sustaining, disruptive, and revolutionary (yep, there’s a third!) Each type has specific characteristics which in turn suggest specific management approaches.
 
 The continuous business model set represents the production, marketing, distribution, etc. systems that keep your profit engine running (ie, how the company currently makes money.) Any discontinuity is a different approach that doesn’t fit within the context of that model--retail channels in a direct sales model, for instance. The discontinuous technological set refers to a non-linear shift in capabilities that essentially renders current systems obsolete, while continuous improvements are those which are built upon, and can integrate with, existing processes.
 
-When we overlay these sets, Christensen’s three forms are apparent: _sustaining_ innovation is the continuous technological improvement that happens within the context of an existing business model. A _revolutionary_ innovation is a step-function change in technology, but still fits within the firm’s model. Finally, a _disruptive_ innovation is a non-linear break in the environment that doesn’t fit within the firm’s current business. Also, it’s worth noting that the size of each set is not accidental: the vast majority of innovation is sustaining, followed by revolutionary and then a relatively small instance of disruptive.
+*Sustaining* innovation is the continuous technological improvement that happens within the context of an existing business model. A *Revolutionary* innovation is a step-function change in technology, but with some modifications still fits within the firm’s current model. Finally, a *Disruptive* innovation is a non-linear break in the environment that doesn’t fit within the firm’s current business model.
+
+| Innovation Type | Tech Model    | Business Model | Frequency | Impact      |
+|-----------------|---------------|----------------|-----------|-------------|
+| Sustaining      | Continuous    | Continuous     | Common    | Significant |
+| Revolutionary   | Discontinuous | Continuous     | Periodic  | Substantial |
+| Disruptive      | Discontinuous | Discontinuous  | Rare      | Severe      |
+
 
 For a concrete example of each type within a single company, let’s consider [Encyclopedia Brittanica](https://en.wikipedia.org/wiki/History_of_the_Encyclop%C3%A6dia_Britannica) (EB). Created in 1768, EB was a general knowledge compendium--the 15th edition was typical at 32,460 pages spanning 32 volumes--used as an authoritative reference on a half-million wide-ranging subjects. EB’s business model was straightforward: editors collected information, compiled it into printed volumes, and sold the sets door-to-door through a commissioned sales staff. This basic model worked essentially unchanged for 225 years, with EB reaching peak sales of $650 million in 1990.
 
-![](https://innovation-options.s3.us-west-1.amazonaws.com/img/1*9CJrwkNFZvWCw4ZFCbk9og.jpeg)
+![]({static}encyclopedia_britannica.png)
 
 During this time, EB managed considerable innovation--editors improved their data gathering systems, production machinery would advance, distribution mechanics grew more efficient--all geared towards producing a better product at a better price. This is the basic day-to-day grind of business, and it’s where the vast majority of innovation happens. It’s the sustaining innovation, continuous on both the business and technology front, that keeps pace with competitors and maintains market share and growth.
 
@@ -32,9 +36,9 @@ Encyclopedia Brittanica innovated continuously for well over two centuries, and 
 
 This is what the PM was trying to tell me. My tactics and techniques were not for the whole company, and certainly not for his business. He lived in the world of continuity; small, incremental progress built on current technology, making everything a little bit better in a well-known market and model. My suggestion to “move fast and break things” wouldn’t get him ahead--it would get him fired. The rebuke was well-deserved.
 
-Yet it’s also worth noting that CD-ROM technology didn’t catch EB by surprise--in fact, they actually published the first multi-media encyclopedia on CD in 1989 through Compton’s, one of their subsidiary publications. But seeing lackluster retail sales--and strong pushback from their own direct sales force--they shut it down. The firm I was presenting to found itself in a similar situation, and the innovation management approaches to avoid a similar fate were relevant; just not as one-size-fits-all solutions for everyone in the company.
+Yet it’s also worth noting that CD-ROM technology didn’t catch EB by surprise--in fact, they actually published the [first multi-media encyclopedia on CD-ROM in 1989](https://en.wikipedia.org/wiki/Compton%27s_Encyclopedia#CD-ROM_editions) through Compton’s, one of their subsidiary publications. But seeing lackluster retail sales--and strong pushback from their own direct sales force--they shut it down. The firm I was presenting to found itself in a similar situation, and the innovation management approaches to avoid a similar fate were relevant; just not as one-size-fits-all solutions for everyone in the company.
 
-![](https://innovation-options.s3.us-west-1.amazonaws.com/img/1*S54aVFf2A66Z8yfgiV5Mrg.jpeg)
+![]({static}comptons.png)
 
 Knowing your innovation type is critical to applying the proper management approach: Sustaining innovations should employ traditional linear management techniques like budget forecasting, planning, waterfall production methods, etc, because the degree of uncertainty is low both on the technology and business model fronts. If a new technology shows it can make a better product cheaper, then don’t worry about whether you’re following the latest innovation management trends--just do it.
 
