@@ -8,11 +8,19 @@ to add its default classes to your tables and images.
 '''
 
 from bs4 import BeautifulSoup
-from pelican import signals, contents
+from pelican import contents, signals
 
 BOOTSTRAPIFY_DEFAULT = {
-    'table': ['table', 'table-striped'],
-    'img': ['img-fluid']
+    'table': [
+        'table',
+        'table-condensed',
+        'table-striped',
+        'my-5',
+    ],
+    'img': [
+        'img-fluid',
+        'my-3',
+    ],
 }
 BOOTSTRAPIFY_KEY = 'BOOTSTRAPIFY'
 
