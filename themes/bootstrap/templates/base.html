@@ -13,7 +13,9 @@
     <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/favicon.png" rel="icon" type="image/x-icon" >
     <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/{{ CSS_FILE }}" rel="stylesheet" />
     <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/bootstrap.bundle.min.js"></script>
-    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/posthog.js"></script>
+    {% if SITEURL == "https://www.innovation-options.com" %}
+      <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/posthog.js"></script>
+    {% endif %}
     <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/main.js"></script>
     {% block styles %}
     {% endblock styles %}
