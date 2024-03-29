@@ -10,7 +10,7 @@ Innovation is not homogenous. In his seminal work “[The Innovator’s Dilemma]
 
 To orient ourselves, let’s use the following Venn diagram representing technological and business model continuity. The yellow circle represents a continuous business model, while the blue signifies a discontinuous technological shift (with outside of each yellow and blue set representing discontinuity and continuity of business model and technology, respectively). For clarity, I’m restricting our examples to the typical case of technological shifts, but they could also be political or regulatory, among others.
 
-![](https://innovation-options.s3.us-west-1.amazonaws.com/img/1*KUeCXX6YOWlnu9rAs6hNVA.png){.img-fluid}
+![](https://innovation-options.s3.us-west-1.amazonaws.com/img/1*KUeCXX6YOWlnu9rAs6hNVA.png)
 
 The continuous business model set represents the production, marketing, distribution, etc. systems that keep your profit engine running (ie, how the company currently makes money.) Any discontinuity is a different approach that doesn’t fit within the context of that model--retail channels in a direct sales model, for instance. The discontinuous technological set refers to a non-linear shift in capabilities that essentially renders current systems obsolete, while continuous improvements are those which are built upon, and can integrate with, existing processes.
 
@@ -18,7 +18,7 @@ When we overlay these sets, Christensen’s three forms are apparent: _sustainin
 
 For a concrete example of each type within a single company, let’s consider [Encyclopedia Brittanica](https://en.wikipedia.org/wiki/History_of_the_Encyclop%C3%A6dia_Britannica) (EB). Created in 1768, EB was a general knowledge compendium--the 15th edition was typical at 32,460 pages spanning 32 volumes--used as an authoritative reference on a half-million wide-ranging subjects. EB’s business model was straightforward: editors collected information, compiled it into printed volumes, and sold the sets door-to-door through a commissioned sales staff. This basic model worked essentially unchanged for 225 years, with EB reaching peak sales of $650 million in 1990.
 
-![](https://innovation-options.s3.us-west-1.amazonaws.com/img/1*9CJrwkNFZvWCw4ZFCbk9og.jpeg){.img-fluid}
+![](https://innovation-options.s3.us-west-1.amazonaws.com/img/1*9CJrwkNFZvWCw4ZFCbk9og.jpeg)
 
 During this time, EB managed considerable innovation--editors improved their data gathering systems, production machinery would advance, distribution mechanics grew more efficient--all geared towards producing a better product at a better price. This is the basic day-to-day grind of business, and it’s where the vast majority of innovation happens. It’s the sustaining innovation, continuous on both the business and technology front, that keeps pace with competitors and maintains market share and growth.
 
@@ -34,7 +34,7 @@ This is what the PM was trying to tell me. My tactics and techniques were not fo
 
 Yet it’s also worth noting that CD-ROM technology didn’t catch EB by surprise--in fact, they actually published the first multi-media encyclopedia on CD in 1989 through Compton’s, one of their subsidiary publications. But seeing lackluster retail sales--and strong pushback from their own direct sales force--they shut it down. The firm I was presenting to found itself in a similar situation, and the innovation management approaches to avoid a similar fate were relevant; just not as one-size-fits-all solutions for everyone in the company.
 
-![](https://innovation-options.s3.us-west-1.amazonaws.com/img/1*S54aVFf2A66Z8yfgiV5Mrg.jpeg){.img-fluid}
+![](https://innovation-options.s3.us-west-1.amazonaws.com/img/1*S54aVFf2A66Z8yfgiV5Mrg.jpeg)
 
 Knowing your innovation type is critical to applying the proper management approach: Sustaining innovations should employ traditional linear management techniques like budget forecasting, planning, waterfall production methods, etc, because the degree of uncertainty is low both on the technology and business model fronts. If a new technology shows it can make a better product cheaper, then don’t worry about whether you’re following the latest innovation management trends--just do it.
 

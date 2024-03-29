@@ -9,6 +9,7 @@ ipython = "*"
 [packages]
 pelican = "*"
 markdown = "*"
+typogrify = "*"
 beautifulsoup4 = "*"
 
 [requires]

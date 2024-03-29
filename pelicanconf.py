@@ -15,7 +15,7 @@ AUTHOR_FEED_RSS = None
 
 # Basic
 DELETE_OUTPUT_DIRECTORY = True
-
+USE_FOLDER_AS_CATEGORY = False
 
 MARKDOWN = {
     'extension_configs': {
@@ -26,8 +26,9 @@ MARKDOWN = {
     'output_format': 'html5',
 }
 
+DEFAULT_DATE = 'fs'
+
 STATIC_PATHS = [
-    'images',
 ]
 
 PAGE_EXCLUDES = STATIC_PATHS
@@ -45,11 +46,20 @@ PAGE_SAVE_AS = '{slug}.html'
 AUTHOR_URL = ""
 AUTHOR_SAVE_AS = ""
 
+CATEGORY_URL = ""
+CATEGORY_SAVE_AS = ""
+
 TAG_URL = ""
 TAG_SAVE_AS = ""
 
 THEME = 'themes/bootstrap'
 
+TYPOGRIFY = True
+TYPOGRIFY_DASHES = 'default'
+
+DIRECT_TEMPLATES = [
+    'index',
+]
 
 TEMPLATE_PAGES = {
     'calculator.html': 'calculator.html',

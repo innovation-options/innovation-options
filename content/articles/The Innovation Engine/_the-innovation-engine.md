@@ -8,7 +8,7 @@ My client was following a common pattern: the innovation team formulates ideas b
 
 Consider the following matrix: on the vertical axis we have the decision on whether or not to pursue an idea, either ‘GO’ or ‘NO-GO’. Then, on the horizontal axis, we have the results from the choice: GO was Wrong (the idea wasn’t valid) or GO was Right (the idea was valid).
 
-![](https://innovation-options.s3.us-west-1.amazonaws.com/img/1*Vrp4RQWgarr5sCrEbT5ttQ.png){.img-fluid}
+![](https://innovation-options.s3.us-west-1.amazonaws.com/img/1*Vrp4RQWgarr5sCrEbT5ttQ.png)
 
 This results in four possible outcomes for any given idea:
 
@@ -36,7 +36,7 @@ And this is where it gets difficult--because to get to the Truth we must embrace
 
 Fortunately, we can adopt predictive modeling metrics for this purpose. The following contingency table, called a “[confusion matrix](https://en.wikipedia.org/wiki/Confusion_matrix)”, outlines various ratios used to improve a classifier.
 
-![](https://innovation-options.s3.us-west-1.amazonaws.com/img/1*qbvg7ab-ZI8IETBb7ksjYg.png){.img-fluid}
+![](https://innovation-options.s3.us-west-1.amazonaws.com/img/1*qbvg7ab-ZI8IETBb7ksjYg.png)
 
 Some key metrics on which we can focus include:
 
