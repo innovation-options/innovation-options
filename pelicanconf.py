@@ -33,6 +33,7 @@ STATIC_PATHS = [
 
 PAGE_EXCLUDES = STATIC_PATHS
 
+LOG_FILTER = [(30, 'Empty alt attribute for image %s in %s')]
 
 DEFAULT_PAGINATION = False
 
