@@ -8,8 +8,6 @@ The Innovation Options calculator is a simple tool to run an ROI analyses on you
 
 We start with the four inputs we’ll need: the term, iterations, fundraising goal and best-case scenario.
 
-![](https://innovation-options.s3.us-west-1.amazonaws.com/img/1*vTLroRAySy6e1Ycaw6bInw.png)
-
 #### Term
 
 The term is the duration of the option. It is the period during which you’ll be conducting the market testing to determine the idea’s growth potential.
@@ -30,8 +28,6 @@ This is the upper bound valuation of that growth round. It generally corresponds
 
 There are two specific outputs from the model: the initial value and the derived sigma.
 
-![](https://innovation-options.s3.us-west-1.amazonaws.com/img/1*OHWYVaLcsdzKqsaeOuMS7g.png)
-
 #### Initial Value
 
 The initial value is what the option is worth at inception. It is the “time-zero” node on the valuation tree, and represents what it is worth to determine whether or not a particularly initiative has actual growth potential.
@@ -43,5 +39,3 @@ The derived sigma is a measure of the relative riskiness of a project given the 
 #### Pre-Money Valuation Tree
 
 The pre-money valuation tree is the fully expanded lattice once of the trinomial calculations are complete. It roughly corresponds to the pre-money valuation of the initiative at any given combination of upward, downward, or flat iterations. The time-zero (leftmost) node also serves as the initial value of the option.
-
-![](https://innovation-options.s3.us-west-1.amazonaws.com/img/1*0covEOBA4eJgxIzds1UvdA.png)
