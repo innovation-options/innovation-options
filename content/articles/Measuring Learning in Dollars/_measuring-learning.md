@@ -49,13 +49,13 @@ The math for an Option is more complicated than NPV (a version of this won the N
 
 Once applied, the inputs produce a pricing tree that looks like this (in millions of dollars):
 
-![]({static}values_pricing_tree.drawio.png)
+![]({static}values_pricing_tree.png)
 
 ### Getting Started
 
 Before we can do anything we need to get the project approved, which means figuring out the ROI. From the tree, we can see the initial value of the option at time zero (i.e., the left-most point) is $6.5M. This is the current return of the option, today, before any work has commenced. To have a positive ROI, John must propose a budget for the option no greater than that number. (To be clear, this is separate and distinct from the “main investment budget” that John proposed as his first input.)
 
-![]({static}step_zero_pricing_tree.drawio.png)
+![]({static}step_zero_pricing_tree.png)
 
 Again, John’s a budget wizard so he quickly outlines a plan that will cost $2M over the course of the year. This includes all the resources he’ll need to produce demos, prototypes and fund his team during that period. Therefore, the ROI is simply the ($6.5M) less that budget request ($2M), or $4.5M.
 
@@ -73,35 +73,35 @@ That’s it. We don’t need to revise, recalculate, or re-estimate. The model h
 
 John’s business plan depends on being in the proper retail channels, so during the first quarter he concentrates on validating this assumption. He builds a quick demo unit and pitches the doorbell to the top home-improvement retail stores. These discussions go very well, and John secures four signed MOUs indicating their intention to become distributors.
 
-![]({static}1*OK1TI9ew5hGFE4a-EtyvRA.png)
+![]({static}step_one_up_pricing_tree.png)
 
 At the first quarter evaluation, John presents this result to Sarah and the review board, who agree that this is good progress. They formally upgrade the project, and the return increases by $11M to $18M.
 
-![]({static}1*uCp8n7Pl2Z7CXpZVlpwzCQ.png)
+![]({static}up_flat_tree.png)
 
 During the second quarter John team builds more substantial working prototypes, tests collateral and messaging, and produces the formal distribution agreements. At the six month milestone negotiations are moving forward but there still aren’t any signed agreements. So, at Q2 the board considers things about the same, and the evaluation is flat. The expected value now falls to $17M.
 
-![]({static}1*fV6xiXmIWiHLfezMM8ECVQ.png)
+![]({static}up_flat_up_tree.png)
 
 During Q3 legal approves the copy and signatures start coming in. As part of the agreement, John gets approval to start selling the product in certain test markets. He starts low-volume product runs of his prototypes and gets the product into the stores to see how well they sell. The investment board agrees the signatures are good progress and they upgrade. The expected value now stands at $44M.
 
-![]({static}1*quEbWPZZk2zhjsgc4h3A7A.png)
+![]({static}up_flat_up_flat_tree.png)
 
 During the final quarter John focuses on unit sales and refining the marketing plan. By the end of the period, sales are in line with expectation; not great, but not terrible either. He learns through customer interaction ways that he can improve the product marketing, but the news is inconclusive and so the final evaluation is flat.
 
-![]({static}1*sU28C9yygXmQCKa1v2YYjA.png)
+![]({static}good_path.png)
 
 We now see the full path of the project. While things didn’t always go as planned, we still clearly are “up and to the right”. The expected return of $43M is clearly profitable and the investment board exercises the option. This means the main $20M investment is approved and the doorbell moves to full production--well ahead of the game with signed distribution agreements, working units, current sales and actionable customer feedback already in place.
 
 #### The Bad
 
-![]({static}1*T39E5VvcyyIqPcfHd5Pfpw.png)
+![]({static}bad_path.png)
 
 Of course, things do not always take the happy path. Instead, let’s consider what happens if in Q3 instead of signing the distribution agreement things gets pushed back again--another flat move. Then, in Q4, the shoe drops and the retail partners refuse to sign: a clear downgrade. The option value drops to zero, and the project does not proceed at scale since it makes no sense to invest $20M building a product that no retail channel will carry.
 
 #### The Ugly
 
-![]({static}1*6Zwea25L41xlniJDQIPyww.png)
+![]({static}ugly_path.png)
 
 Sometimes things go _really_ poorly. Let’s say this time John goes through the first two quarters trying to generate interest from retail partners and gets nowhere. At this point the model shows that even if he upgrades at every remaining iteration he can’t get the value of the option above zero. Since it makes no sense to continue if there no chance of becoming profitable, at the Q2 review the decision is made to cancel the option and recoup the remaining funds. (As an aside, it’s worth noting that the pricing model helps dispassionately guide a decision that is otherwise very difficult and fraught with emotion.)
 
@@ -109,6 +109,3 @@ Sometimes things go _really_ poorly. Let’s say this time John goes through the
 
 The Innovation Option model measures **_learning_** (what your early-stage Product team should be doing) in **_dollars_** (what your Finance team needs for effective corporate governance.) It provides a simple, easy to implement approach that minimally disrupts existing workflows. And it doesn’t simply mitigate risk, it reduces it through iteration. Firms seeking to innovate faster with better results and less risk should make Innovation Options the first step in their new-product initiatives.
 
-### Learn More
-
-I wrote some software to take away the pain of the math; to sign up (for free) go to [http://innovation-options.com](http://innovation-options.com)

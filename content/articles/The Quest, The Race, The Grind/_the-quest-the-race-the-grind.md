@@ -32,7 +32,7 @@ Horizon One produces predictable profits.  This is the ultimate destination for 
 
 Each horizon has its own particular level of certainty as it makes its way through the lifecycle. Consider the following table which breaks down what we **know** versus what we **assume** at each stage with regard to the growth and profit engines. (By “engines” I mean the systematized processes by which we can consistently and reliably produce the results we seek.)
 
-![]({static}1*gBRh87Iot34aCF3c9w3E4Q.png)
+![]({static}assume_know_table.png)
 
 High certainty is the defining characteristic of an H1 product. We have solid knowledge and can make confident predictions about future behavior. We trust all the dependencies in the value chain to work in a certain way--suppliers, customers, operations, support, competitors--and focus on tuning our growth and profit engines for maximum efficiency. And since H1 is the target end-state, there are no assumptions necessary once we reach that stage--we know everything we need to know to operate our business successfully.
 
@@ -42,13 +42,13 @@ Finally, with H3 business we only know that we’re building something that cost
 
 The product lifecycle is therefore properly characterized as the development of a growth engine, followed by its corresponding profit engine. Ultimately our goal is to get both systems running at scale, which can only occur as we gain certainty of how each engine operates.
 
-![](static}1*_pT4ComB5eUj3mp89IJI9g.png)
+![]({static}growth_profit_arrows.png)
 
 This is important because management approaches differ depending on the degree of certainty. High certainty means Execution--we know what the job is and how to do it, so let’s get it done. This is the time for scale, specialization, and systemization. We have our engines running, and the primary obligation is to keep them running smoothly.
 
 In contrast, low certainty means Exploration--we need to validate our assumptions before scaling into the unknown. This is the time for tests, flexibility and agility; our main task is to learn from the market as rapidly as possible. This is an iterative, non-linear process that is more focused on turning our assumptions into knowledge (ie, building certainty.)
 
-![]({static}1*uLmvUmOFqb51C3-gIQ3oCg.png)
+![]({static}explore_execute_table.png)
 
 Overlaying the tactics on the horizons, we see each stage has its own unique mix of approaches. H1 is solely about execution; we’ve established our growth and profit engines and the focus is on optimizing each. H2 requires a hybrid approach: we need to execute effectively to keep the growth engine humming while simultaneously exploring the profit engine to follow (the only stage with such a dual-focus). Finally, H3 is pure exploration; we need to validate the assumptions on which we’re counting to produce non-linear growth.
 
@@ -56,15 +56,15 @@ Overlaying the tactics on the horizons, we see each stage has its own unique mix
 
 Since the horizons demand management approaches that are mutually exclusive, it implies that there are two points of transition where we move from exploration to execution on each engine.
 
-![]({static}1*RBxkaNoK1SJAi-9H8O_Fxg.png)
+![]({static}growth_profit_transition.png)
 
 The transition from H2 to H1 is defined by the relationship between the growth and profit engines. Remember that projects in H2 have dual-goals: they must maintain their growth engine as they test their profit engine. When calling H2 “the Race” I mean more than just against the competition. The critical race is actually between the dual goals; meaning, you must find a reliable profit engine _before_ your growth stalls. As long as you continue to experience non-linear growth, you will find investors willing to fund that growth. However, as soon as growth stalls everyone is going to start asking questions about the profit that was promised. You win the Race when you can successfully transition to H1 before your growth stalls.
 
-![]({static}1*ZPA8AQ0ZRrBNCj4bF5nqvQ.png)
+![]({static}innovation_growth_transition.png)
 
 The transition from H3 to H2 is defined by a discrete event: growth financing. Growth is expensive--production needs to scale systems, marketing campaigns need to be run, managers need to oversee everything--which rarely can be achieved through internal cash flow. And since growth financing’s purpose is to--spoiler alert--produce growth, growth must follow or the project will not get subsequent financing. Thus, the transition should occur (ie, you should take growth financing) only _after_ growth is known.
 
-![]({static}1*VjIxO5qmzdd9o_BWEjg7tQ.png)
+![]({static}one_way.png)
 
 The transitions are critical because the product lifecycle has another built-in natural law: just as you can’t go from adulthood back to adolescence or childhood, once you enter into a new horizon you can’t go back to a previous one.
 
