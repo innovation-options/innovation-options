@@ -15,31 +15,27 @@ The [Trinomial](https://en.wikipedia.org/wiki/Trinomial_tree) is an option-prici
 
 Step one constructs a range of possible future values for a given opportunity. Think of it like a storm tracker; from the current position of the storm, the potential path expands into a cone across the possible area of impact. The further in the future, the greater the size of the cone. That’s what happens in step one: from a known starting point, the range of values branches out over the life of the option. It could appreciate greatly and always be headed “up and to the right”. Or it could be a complete disaster, always losing value. Or it could go up, then down, then up, then flat--anywhere in between the best and worst case.
 
-![]({static}1*yl7dfA0y7dmUo-xucIkVCQ.png)
+![]({static}lattice.png)
 
 This range is called a “lattice”, or a series of connected nodes that looks like a sideways branching tree. Mathematically the lattice is constructed by applying these equations to each node in sequence:
 
-![]({static}1*R3HNE8ORyiRt475x6yn7uQ.png)
+![]({static}equations.png)
 
 The components of these equations are the Natural Logarithm `e`, the duration of the time step `delta t`, and the volatility of the proposed investment `sigma`. (We’ll show later how to calculate these and other variables; for now simply assume them to be known.) The desired outputs are the factors `u`, `d` and `m`, by which the investment may increase, decrease, or remain the same, respectively.  It is from these three moves that the Trinomial is named.
 
 With the factors determined, you build the lattice by taking your starting point (called the Spot) and multiplying it by the `u`, `d` and `m` factors.
 
-![]({static}1*7DZ9zja9H4DouAhQBm665g.png)
+![]({static}equations_step_one.png)
 
 Then, those three results are themselves multiplied by `u`, `d` and `m`, creating still more nodes.
 
-![]({static}1*bzPGID3nuSRFI59UTuM6FQ.png)
+![]({static}equations_step_two.png)
 
 This continues for a given number of steps until the option’s term (the period within which it must be exercised) expires.
 
-![]({static}1*KIQgYmKMuSy-26iLTk1fCw.png)
-![]({static}1*xl8v5pW4JR2wkdEHrhimpg.png)
-![]({static}1*yl7dfA0y7dmUo-xucIkVCQ.png)
-
 An interesting feature to note is that the `u` and `d` factors are reciprocals of one another. This means that going up in one step and then down in the next results in the same value as if you went down and then up.
 
-![]({static}1*UWOJcNrtr3zPrgj2A6TESw.png)
+![]({static}recipricol.png)
 
 In fact, any combination of up/down/flat moves results in the same possible future value. This is called a recombining matrix, making the trinomial method fairly easy to visualize and calculate.
 
@@ -49,11 +45,11 @@ Step two is about factoring the choice the option represents into its value. The
 
 Calculating exercise value is fairly simple: just subtract the proposed investment (called the Strike, or `K`) from that possible future value (the future Spot, called `Sn`) and take the difference or zero, whichever is greater. For instance, if the future value is $2 and the investment is $5 we’d lose $3 if we did that deal, but since we are under no obligation to buy we simply walk away. If instead the future value were $12 we’d make $7, and take that deal. Mathematically, we write this as:
 
-![]({static}1*8yB419ax8RSccfxsH9hkOw.png)
+![]({static}exercise_equation.png)
 
 Simply apply that to every possible future value, and you have the total range of exercise value at the end of the option’s term.
 
-![]({static}1*J-XkpOaoN5gWgJBAA59Zcw.png)
+![]({static}max_equation_applied.png)
 
 #### Step Three: Calculate the Expected Value
 
@@ -61,22 +57,13 @@ Finally, we work from those potential future values back to the present. We are 
 
 Starting with the penultimate nodes, calculate these using the factors:
 
-![]({static}1*KRAX8U3MeE0jb1Yt8ba8Hg.png)
+![]({static}return_equations.png)
 
 The equations here are the most complex, but in plain English they say, “multiply the exercise values by their expected value, and sum those results taking into account the time value of money at the risk-free rate `r`.”
 
-![]({static}1*HKOVcWLv8UXuWQr3TlxgMw.png)
+![]({static}return_equations_applied.png)
 
-Continue calculating backward column by column, node by node, through the entire lattice.
-
-![]({static}1*wOzoFoQ0UKk_d3ZnnviWug.png)
-![]({static}1*u3ljB15UVl-u2xNbSyIuMA.png)
-![]({static}1*cbPZHWiMHwmxismPfJUBQg.png)
-![]({static}1*oGeqg6-yWd12QU4lp5Oqzw.png)
-![]({static}1*yl7dfA0y7dmUo-xucIkVCQ.png)
-![]({static}1*cHlpdhnVAn1-UzLJftlImA.png)
-
-When you get back to the starting point, you have the current value of the option. This is the exact same approach that is used to value billions of dollars of American-style options on the Chicago Board of Exchange every day.
+Continue calculating backward column by column, node by node, through the entire lattice.  When you get back to the starting point, you have the current value of the option. This is the exact same approach that is used to value billions of dollars of American-style options on the Chicago Board of Exchange every day.
 
 ### Applied to Innovation
 
