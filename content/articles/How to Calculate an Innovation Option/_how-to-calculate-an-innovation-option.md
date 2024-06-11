@@ -21,7 +21,7 @@ This range is called a “lattice”, or a series of connected nodes that looks 
 
 ![]({static}equations.png)
 
-The components of these equations are the Natural Logarithm `e`, the duration of the time step `delta t`, and the volatility of the proposed investment `sigma`. (We’ll show later how to calculate these and other variables; for now simply assume them to be known.) The desired outputs are the factors `u`, `d` and `m`, by which the investment may increase, decrease, or remain the same, respectively.  It is from these three moves that the Trinomial is named.
+The components of these equations are the Natural Logarithm $$e$$, the duration of the time step `delta t`, and the volatility of the proposed investment `sigma`. (We’ll show later how to calculate these and other variables; for now simply assume them to be known.) The desired outputs are the factors `u`, `d` and `m`, by which the investment may increase, decrease, or remain the same, respectively.  It is from these three moves that the Trinomial is named.
 
 With the factors determined, you build the lattice by taking your starting point (called the Spot) and multiplying it by the `u`, `d` and `m` factors.
 
@@ -39,23 +39,25 @@ An interesting feature to note is that the `u` and `d` factors are reciprocals o
 
 In fact, any combination of up/down/flat moves results in the same possible future value. This is called a recombining matrix, making the trinomial method fairly easy to visualize and calculate.
 
+On completion of Step One you have a lattice of arbitrary size, comprised of each potential combination expected values, from a single time zero value into n values at the option expiry.
+
 #### Step Two: Consider the Option
 
-Step two is about factoring the choice the option represents into its value. There is no requirement that you exercise an option; it’s a right, not an obligation. So, if the option is a net positive we use that value; if it’s a net negative we walk away and the value is zero. Step two is simply about assessing the positive values and zeroing the rest.
+Step Two is about factoring the choice the option represents into its value at expiration.  There is no requirement that you exercise an option; it’s a right to purchase, not an obligation.  Accordingly, if the option is a net positive we use that value; if it’s a net negative we walk away and the value is zero. Step Two simply keeps the positive values and zeros the rest.
 
-Calculating exercise value is fairly simple: just subtract the proposed investment (called the Strike, or `K`) from that possible future value (the future Spot, called `Sn`) and take the difference or zero, whichever is greater. For instance, if the future value is $2 and the investment is $5 we’d lose $3 if we did that deal, but since we are under no obligation to buy we simply walk away. If instead the future value were $12 we’d make $7, and take that deal. Mathematically, we write this as:
+Calculating the exercise value is fairly simple: just subtract the proposed investment (called the Strike, or `K`) from that possible future value (the future Spot, called `Sn`) and take the difference or zero, whichever is greater. For instance, if the future value is $2 and the investment is $5 we’d lose $3 if we did that deal, but since we are under no obligation to buy we simply walk away. If instead the future value were $12 we’d make $7, and take that deal. Mathematically, we write this as:
 
 ![]({static}exercise_equation.png)
 
-Simply apply that to every possible future value, and you have the total range of exercise value at the end of the option’s term.
+Simply apply that to every possible expected value at expiry, and you have the total range of exercise values at the end of the option’s term.
 
 ![]({static}max_equation_applied.png)
 
-#### Step Three: Calculate the Expected Value
+#### Step Three: Calculate the Discounted Expected Value
 
-Finally, we work from those potential future values back to the present. We are sequentially saying, “OK, if this is a future outcome, what does it look like right before that outcome?” Repeating this process back to time zero, we ultimately arrive at a single number that represents the value of the option today. Thus, in contrast to a traditional project where value is determined from a single future outcome, an option considers many different future outcomes, calculates their relative probability, and sums together their discounted expected values to get the current value.
+Finally, we work from those potential future values back to the present. We are sequentially saying, “OK, if this is a future outcome, what does it look like right before that outcome?”  We determine that by summing the discounted expected value equations for the three child nodes into their parent node.
 
-Starting with the penultimate nodes, calculate these using the factors:
+So, starting with the penultimate nodes, calculate these using the factors:
 
 ![]({static}return_equations.png)
 
@@ -63,35 +65,30 @@ The equations here are the most complex, but in plain English they say, “multi
 
 ![]({static}return_equations_applied.png)
 
-Continue calculating backward column by column, node by node, through the entire lattice.  When you get back to the starting point, you have the current value of the option. This is the exact same approach that is used to value billions of dollars of American-style options on the Chicago Board of Exchange every day.
+Continue calculating backward column by column, node by node, through the entire lattice.  Repeating this process back to time zero results in a single number that represents the value of the option today.
+
+Thus, in contrast to a traditional project where value is determined from a single estimated future outcome, an option considers many different future outcomes, calculates their relative probability, and sums together their discounted expected values to get the current value.
+
 
 ### Applied to Innovation
 
-Conceptually, Innovation Options are similar to their traditional counterparts: they represent the right, but not the obligation, to make a future purchase at a fixed price, thus delaying the investment decision until more is known about the market. In the Innovation context, the investment decision is the answer to the question: ‘should we enter the market for this innovative product?’ Therefore the negotiated price--the Strike--is the investment we’d make to develop and market that product. Think of it as a Series A round--how much would you raise in a Series A for this idea? That is the Strike of an Innovation Option.
+Conceptually, Innovation Options are similar to their traditional counterparts: they represent the right, but not the obligation, to make a future purchase at a fixed price, thus delaying the investment decision until more is known about the market. In the Innovation context, the investment decision is the answer to the question: ‘should we enter the market for this innovative product?’ Therefore the negotiated price -- the Strike -- is the investment we’d make to develop and market that product. Think of it as a Series A round: how much would you raise in a Series A for this idea? That is the Strike of an Innovation Option.
 
-Next, we need to determine a Spot value. Normally we’d use a stock quote for the spot, but obviously there is no such quote available for our innovation project. However, we do know that if the option is exercised it will have cash in the bank--specifically, the cash provided by the exercise of the option itself. For example, if you exercised the option with a Strike of $50K and then immediately sold it, it could only be worth $50K since there has been no time to create any other value. Thus, we are able to approximate the starting point (the Spot) by making it equivalent to the Strike.
+Next, we need to determine a Spot value. Normally we’d use a stock quote for the spot, but obviously there is no such quote available for our innovation project. However, we do know that if the option is exercised it will have cash in the bank; namely, the cash provided by the exercise of the option itself. For example, if you exercised the option with a Strike of $50K and then immediately sold it, it could only be worth $50K since there has been no time to create any other value. Thus, we are able to approximate the starting point (the Spot) by making it equivalent to the Strike.
 
-Next, we consider the term for the Innovation Option. The term can be any duration, but as a practical matter we want the option to represent the period during which we are gathering new market information so that we can make an informed decision about the Strike investment. It should be enough time for us to gather useful data while not being so long as to miss the opportunity for action. Typically, an Innovation Option term is anywhere from a month to a year, depending on the sector. In addition, it’s important to recognize that at the end of the option term we make the decision whether or not to exercise; therefore, it’s common to line up the term with other budgetary milestones (like quarter close, etc.)
+Next, we consider the term for the Innovation Option. Theoretically the term can be any duration, but as a practical matter the option represents the period during which we are gathering new market information so that we can make an informed decision about whether or not to exercise the option (ie, whether or not the Strike investment will be profitable).  These research activities cost money, and so the duration of the option is bounded by the amount of money in question divided by the burn rate.  Therefore, the amount budgeted for exploration is the option Premium (ie, the amount of money that will be spent whether or not the option is exercised) and the option expiration is the date on which that money is depleted.
 
-Next, we consider the `sigma`. Like the Spot, the sigma is traditionally estimated through historical stock prices to which we don’t have access. However, with Innovation Options we do have access to other variables in the sigma equation that allow us to derive the sigma directly. Mathematically, we solve for sigma by:
+Finally, we consider the `sigma`. The sigma is the standard deviation of the log-returns for historical prices of the underlying instrument, and is a measure of overall volatility.  The volality represents the range of possibility in the future potential value of the innovation.  It is analogous to the area of the storm path cone in our earlier analogy, and directly relates to the maximum ending value -- the topmost right node -- in our lattice.
 
-![]({static}1*Aznb61VdkJYUFIN1Zi4ldQ.png)
+Sigma is calculated through the following equation, for time periods `T` and and the corresponding post-money valuation `X`.
 
-With this equation, K represents the known strike price; that’s the easy part.
+![]({static}sigma.png)
 
-`M` represents the maximum pre-money market value of the idea. There are two primary methods for estimating M. The default approach recognizes that the Strike is akin to a Series A investment in scope and risk; we’re seeking a particular amount of money as a first-raise to bring this product to market. Thus, we can use the bounds normally associated with Series A valuations to serve as a proxy for the range of pre-money exercise value.
-
-While this may seem like a random constraint, Series A investments actually have a fairly narrow range of operation. For instance, even with can’t-miss ideas and repeat entrepreneurs an initial raise (with no product or traction) for a consumer internet play will rarely exceed a $100M valuation. Moreover, the valuations tend to cluster by sector--consumer internet would typically be a lower raise and valuation than a biotech play, for instance. Thus, Series A sector benchmarks approximate the market value for Innovation Options just as stock quotes approximate the sigma for a traditional asset.
-
-Alternatively, firms with a history of investing in innovation projects can use their own internal valuation benchmarks for greater relevance. Simply find previously funded projects similar in scope and concept to the idea being considered, and use their original business plan valuations to create the boundary range. Note that you should consider all projects that were approved and funded--not solely the ones that were successful--to provide the complete picture of the value these ideas command within the firm.
-
-In either case, you simply need to determine a maximum possible next-round valuation to solve for the sigma; the lower bound will always be zero, and is considered as part of the equation. Also, it’s worth mentioning that option is not highly sensitive to `M` at the early valuation stages. Sensitivity increases as the option approaches expiration, which allows for revised expectations as more information becomes available. Moreover, this means that you can’t game the initial value simply by increasing the `M`; the option intrinsically discounts the value of information the farther into the future you go.
+I've calculated the `sigma` for various investment areas that you can use in calculating your own innovation options.  Alternatively, firms with a history of investing in innovation projects can use their own internal valuation benchmarks for greater relevance and precision. Simply find previously funded projects similar in scope and concept to the idea being considered, and use their original business plan valuations to create the boundary range. Note that you should consider all projects that were approved and funded--not solely the ones that were successful--to provide the complete picture of the value these ideas command within the firm.
 
 This leaves us to estimate `i`, or the number of iterations during the life of the option. (`delta t` is solved by `term-in-years`/`i`). In the standard trinomial model, the number of iteration steps is arbitrary because the process is simply a simulation; generally about a dozen iterations suffices for a statistically significant result. However, with Innovation Options we don’t rely on simulated outcomes because we can run actual trials. In fact, that is the entire point of the option: to delay the investment decision until we know more about the market. Thus, with an Innovation Option it’s no longer the idea of “it could go up, it could go down, it could stay the same”--instead, it’s “it _did_ go up, it _did_ go down, it _did_ stay the same”, reflecting the actual value of the information gained during the option’s life.
 
-It is important to note that since each iteration represents an assessment of where the idea stands against reality, each iteration must map to a real-world test of one of the idea’s core assumptions. This is called “validated learning”, and it means that our assessment must result from actual customer interaction rather than research or hypotheticals. Thus, the number of iterations should tie directly to the anticipated release cycle for prototypes and other minimal viable product releases. Release cycles themselves are generally related to the sector: again, in our consumer internet v. biotech example, the release cycle of the former is generally measured in weeks, while the latter might be months. Regardless, when constructing the option the number of expected iterations should be estimated in advance and used to calculate the sigma.
-
-Thus, with an upper bound value `M` and a strike price `K`, the total iterations `i` and time period `delta t` we can approximate the sigma required by the other formulae.
+It is important to note that since each iteration represents an assessment of where the idea stands against reality, each iteration must map to a real-world test of one of the idea’s core assumptions. This is called “validated learning”, and it means that our assessment must result from actual customer interaction rather than research or hypotheticals. Thus, the number of iterations should tie directly to the anticipated release cycle for prototypes and other minimal viable product releases. Release cycles themselves are generally related to the sector: again, in our consumer internet v. biotech example, the release cycle of the former is generally measured in weeks, while the latter might be months. The ultimate value of the option is not terribly sensitive to the number of iterations, but holding outcomes to iterations performed does have benefits for effective corporate governance.
 
 #### Calculating the Return on Investment
 
@@ -100,7 +97,7 @@ At this point we have all the inputs and equations needed to construct an innova
 *   The amount of funding sought to bring the product to market (S, K)
 *   The term of the option (t)
 *   The iterations expected during that term (i)
-*   The upper bound of the next-round valuation (M)
+*   The sigma (s)
 *   The risk-free rate (r)
 
 From that, you first calculate the sigma:

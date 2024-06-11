@@ -19,7 +19,9 @@ BOOTSTRAPIFY_DEFAULT = {
     ],
     'img': [
         'img-fluid',
-        'my-3',
+        'my-5',
+        'mx-auto',
+        'd-block',
     ],
 }
 BOOTSTRAPIFY_KEY = 'BOOTSTRAPIFY'
