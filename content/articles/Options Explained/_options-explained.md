@@ -15,69 +15,54 @@ Other forms of options are farming futures, fuel rate swaps, life insurance poli
 
 #### Payoffs
 
-![]({static}1*9NU5BAfOoqJqKt-19DIP-Q.jpeg)
+![]({static}payoff_plot.png)
 
-Let’s dive in a bit deeper with some visuals to help. We’ll start with a simple payoff graph.
+Let’s dive in a bit deeper with some visuals to help. We’ll start with a simple payoff graph.  The y-axis is the current paper Value of the investment (ie, the net profit if we sold), while the x-axis is the Spot (the current market price of the underlying instrument to which the option is tied.)
 
-![]({static}1*Hxi8bKrKEN_oyvKcVsbZWw.jpeg)
+![]({static}appreciated.png)
 
-Now, let’s say you paid $20 for some stock. That’s represented by the blue vertical line.
+Now, let’s say you own a stock for which you paid $20.  If the market price for that stock is at $30, then the current unrealized value of the stock would be $10 ($30 - $20).
 
-![]({static}1*H20fG1RXvr4kFAfeZyrc2g.jpeg)
+![]({static}depreciated.png)
 
-The horizontal (x-axis) is the current market price of the investment. This is the gross price of what you’d get if you sold the investment.
+And if the price falls to $10, then you have an unrealized loss of $10 ($20 - $30).
 
-![]({static}1*7P-lANCNWfdUKoAyzNgXeA.jpeg)
+![]({static}breakeven_plot.png)
 
-Here, the vertical (y-axis) is the return on the investment. This is the net return of what you’ll get back (the market price less the original $20.)
-
-![]({static}1*loTE_wYHuljKB8WGNpTcFw.jpeg)
-
-So, if the price goes above $20, your stock gains value.
-
-![]({static}1*VCF8MMYKSUi9BpVzPSM8EQ.jpeg)
-
-And if the stock price falls below $20 your stock loses value.
-
-![]({static}1*c9s0aDZwDB9DRoiZwDF9kw.jpeg)
-
-So this is the full payoff curve; you could lose the entire $20 investment, or you can make money as long as the stock price keeps rising. The breakeven point is at $20.
+So this is the full payoff curve; you could lose the entire $20 investment, or you can make money as long as the stock price keeps rising, with a breakeven point of $20.
 
 #### Options
 
 Now let’s consider an Option, specifically the option to buy a stock (termed a _call option_ in the lingo--options to sell are termed _put options_.) Here, instead of buying the stock immediately for $20 we’ll instead have the **right** to buy it at some point in the future for $20. This price is called the Strike price.
 
-![]({static}1*Hxi8bKrKEN_oyvKcVsbZWw.jpeg)
+![]({static}strike_plot.png)
 
 Here is the Strike price plotted as the blue line (the same place as before).
 
-![]({static}1*JCDGTND6z6TtNjCe2rUhPA.jpeg)
+![]({static}in_money.png)
 
-When the stock price goes up, the value of the option goes up just like before.
+When the stock price goes up, the value of the option goes up just like before.  If you were to exercise this option, you would pay $20 for the stock, which is worth $30, meaning the option is worth $10 at that particular spot price.  This is called being "in the money".
 
-![]({static}1*m-R1evbmVFZGIPn-9zFM0w.jpeg)
+![]({static}out_money.png)
 
-However, unlike before, when the stock price falls below $20 we don’t lose money. Remember: an option is the **right** but not the **obligation** to buy something. So, since we don’t have to spend $20 to get something that’s only worth $10, we simply do nothing.
+However, unlike before, when the stock price falls below $20 we don’t lose money. Remember: an option is the **right** but not the **obligation** to buy something. So, since we don’t have to spend $20 to get something that’s only worth $10, we simply do nothing and can let the option expire.  This is called being "out of the money".
 
-![]({static}1*b1bq9wjCqVzOVDjcQBCL-g.jpeg)
+![]({static}one_side_curve.png)
 
-This produces a one-sided payoff curve that is characteristic of options. While the upside of the option is unbounded if the price keeps rising, you can’t lose any money even if the price drops to zero. You can’t lose!
+This produces a one-sided payoff curve that is characteristic of options. While the upside of the option is unbounded if the price keeps rising, nothing happens if the price falls (even to zero.)  You can’t lose!
 
-![]({static}1*1CLVYDUEFLbG83CYNK9kog.jpeg)
+![]({static}premium_line.png)
 
-Of course, this optionality doesn’t come for free; you have to pay for the right to buy at $20. This is called the Premium, and for this option we’ll say the cost is $2 (added to the chart as the red line.)
+Of course, this optionality doesn’t come for free; you have to pay for the right to buy at $20. This is called the Premium, and for this option we’ll say the cost is $2 (added to the chart as the dotted orange line.)
 
-![]({static}1*uwKZiD2gsePu2hwR70ZQiw.jpeg)
+![]({static}payoff_premium.png)
 
-So now we’ll shift the entire payoff curve down by $2 and see the difference.
+Of course, this means that we need to shift the entire payoff curve down by that same $2 Premium.  Before, the breakeven point was $20, but now the breakeven point is $22: the $20 to buy the stock (at the Strike price), plus the $2 for the option itself (the Premium.) So now we can actually lose money, but that loss is limited to the option Premium ($2), and while the upside remains unbounded, it is reduced by that same amount overall.
 
-![]({static}1*adkKoQqj8ZIbqAojDwjLBg.jpeg)
 
-Before, the breakeven point was $20, the same as the purchase price. But now, the breakeven point is $22: the $20 to buy the stock (at the Strike price), plus the $2 for the option itself (the Premium.) So now we can actually lose money, but that loss is limited to the option Premium ($2).
+![]({static}combined.png)
 
-![]({static}1*vOYE2s8fcbGVLzwHoBNobg.jpeg)
-
-When we overlay the two curves, we can see why options are so valuable. While the upside is nearly the same, when buying the stock immediately there is the potential to lose the entire $20 investment, while the option loss is capped at $2. Yes, the breakeven point is a bit more, but overall we’ve greatly reduced our downside risk for a (relatively) small amount of money.
+When we overlay the two curves, we can see why options are so valuable.  Yes, the breakeven point is a bit more and we've given up some small upside, but overall we’ve greatly reduced our downside risk for a (relatively) small amount of money.
 
 #### Summary
 
