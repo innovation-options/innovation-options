@@ -11,6 +11,7 @@ pelican = "*"
 markdown = "*"
 typogrify = "*"
 beautifulsoup4 = "*"
+pelican-render-math = "*"
 
 [requires]
 python_version = "3.12"

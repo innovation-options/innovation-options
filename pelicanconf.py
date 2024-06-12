@@ -22,6 +22,7 @@ MARKDOWN = {
         'markdown.extensions.codehilite': {'css_class': 'highlight'},
         'markdown.extensions.extra': {},
         'markdown.extensions.meta': {},
+        'markdown.extensions.smarty': {},
     },
     'output_format': 'html5',
 }
@@ -39,6 +40,7 @@ DEFAULT_PAGINATION = False
 
 PLUGINS = [
     'plugins.bootstrapify',
+    'render_math',
 ]
 
 PAGE_URL = '{slug}.html'
