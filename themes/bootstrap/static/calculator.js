@@ -2,12 +2,11 @@ const { log, sqrt, exp, pow, max } = Math;
 
 function calculateOption() {
   let strike = document.getElementById("strike").value;
-  let market = document.getElementById("market").value;
   let offsetChoice = document.getElementById("offset").value;
   let termChoice = document.getElementById("term").value;
+  let sigmaChoice = document.getElementById("sigma").value;
 
-  let riskFree = 0.01;
-  let premium  = strike;
+  let riskFree = 0.05;
 
   const offsetMap = {
     'Weekly': 52,
@@ -17,7 +16,7 @@ function calculateOption() {
     'Quarterly': 4,
     'Semi-Annually': 2,
     'Annually': 1,
-  }
+  };
 
   const termMap = {
     'One Quarter': 0.25,
@@ -26,27 +25,26 @@ function calculateOption() {
     'Year and a Half': 1.50,
     'Two Year': 2.0,
     'Four Year': 4.0,
-  }
+  };
+
+  const sigmaMap = {
+    'Very Low': 0.12,
+    'Low': 0.37,
+    'Moderate': .62,
+    'High': .89,
+    'Very High': 1.2,
+  };
 
   let offset = offsetMap[offsetChoice];
   let term = termMap[termChoice];
+  let sigma = sigmaMap[sigmaChoice];
 
 
   function getIterations(offset, term) {
     return offset * term;
-  }
+  };
 
   let iterations = getIterations(offset, term);
-
-  function getSigma(market, strike, iterations, term) {
-    return log(
-      market / strike
-    ) / (
-      iterations * sqrt(2*(term / iterations))
-    );
-  }
-
-  let sigma = getSigma(market, strike, iterations, term);
 
   function getDeltaT(term, iterations) {
     return term / iterations;
@@ -156,17 +154,11 @@ function calculateOption() {
 
   let valueTree = getValueTree(termValue, iterations, riskFree, deltaT, upProb, downProb, flatProb);
 
-  function getRoi(valueTree, premium) {
-    return valueTree[0][0] - premium;
-  }
-
-  let roi = getRoi(valueTree, premium);
-
-  function getStartingValue(valueTree) {
+  function getPremium(valueTree) {
     return valueTree[0][0];
   }
 
-  let startingValue = getStartingValue(valueTree);
+  let premium = getPremium(valueTree);
 
   function getValueArray(valueTree) {
     let a = [];
@@ -205,7 +197,7 @@ function calculateOption() {
     let output = '';
     for (let i = 0; i < valueArray.length; i++) {
       let subArray = valueArray[i]['payload'];
-      subArray.sort((a, b) => b.moves - a.moves)
+      subArray.sort((a, b) => b.moves - a.moves);
       let inner = '';
       for (let j = 0; j < subArray.length; j++) {
         let datum = subArray[j]['value'].toFixed(1).toString();
@@ -225,8 +217,7 @@ function calculateOption() {
     `;
   }
 
-  document.getElementById('starting-value').value = startingValue.toFixed(1);
-  document.getElementById('sigma').value = sigma.toFixed(1);
+  document.getElementById('premium').value = premium.toFixed(1);
   document.getElementById("valuation-tree").innerHTML = createTable(valueArray);
   document.getElementById("tree-title").innerHTML = "Pre-Money Valuation Tree";
 
