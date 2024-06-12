@@ -5,35 +5,37 @@ Summary: The mathematics behind the innovation option formula.
 
 Innovation Options measure the return on investment (ROI) of pre-growth initiatives based on the option value they provide to the firm. They are an effective alternative to traditional, cash-flow based approaches such as Net Present Value which fail under conditions of high market uncertainty.
 
-In this article, I’ll detail how one calculates the ROI of an Innovation Option using the trinomial option pricing model. First, I’ll describe the trinomial model’s general approach and equations. Second, I’ll demonstrate how the trinomial is adapted specifically for innovation. Third, I’ll show how you use the model to generate an ROI for the Innovation Option and measure progress during its term. Finally, I’ll describe some of the advantages and limitations of the Innovation Option approach and provide some tools for the model’s real-world application.
+In this article, I’ll detail how to calculate the ROI of an Innovation Option using the trinomial option pricing model. First, I’ll describe the trinomial model’s general approach and equations. Second, I’ll demonstrate how the trinomial is adapted specifically for innovation. Third, I’ll show how you use the model to generate an ROI for the Innovation Option and measure progress during its term. Finally, I’ll describe some of the advantages and limitations of the Innovation Option approach and provide some tools for the model’s real-world application.
 
 ### The Trinomial Model
 
 The [Trinomial](https://en.wikipedia.org/wiki/Trinomial_tree) is an option-pricing model developed by [Phelim Boyle](https://en.wikipedia.org/wiki/Phelim_Boyle) in 1986.  It is the most-common method to value American-style options (as opposed to the more widely-known [Black-Scholes Model](https://en.wikipedia.org/wiki/Black–Scholes_model) used primarily for European-style options).  The Trinomial Model has three steps.
 
-#### Step One: Construct the Lattice
+#### Step One: Build Range of Future Values
 
-Step one constructs a range of possible future values for a given opportunity. Think of it like a storm tracker; from the current position of the storm, the potential path expands into a cone across the possible area of impact. The further in the future, the greater the size of the cone. That’s what happens in step one: from a known starting point, the range of values branches out over the life of the option. It could appreciate greatly and always be headed “up and to the right”. Or it could be a complete disaster, always losing value. Or it could go up, then down, then up, then flat--anywhere in between the best and worst case.
+Step one constructs a range of possible future values for an opportunity from a given starting point. Think of it like a storm tracker; from the current position of the storm, the potential path expands into a cone across the possible area of impact. The further in the future, the greater the size of the cone. That’s what happens in step one: from a known starting point, the range of values branches out over the life of the option. It could appreciate greatly and always be headed “up and to the right”. Or it could be a complete disaster, always losing value. Or it could go up, then down, then up, then flat -- anywhere in between the best and worst case.
 
 ![]({static}lattice.png)
 
-This range is called a “lattice”, or a series of connected nodes that looks like a sideways branching tree. Mathematically the lattice is constructed by applying these equations to each node in sequence:
+This range is called a “lattice”, or a series of connected nodes that looks like a sideways branching tree. Mathematically the lattice is constructed by applying these equations to each node in sequence, starting with the initial value:
 
-![]({static}equations.png)
+$$u=e^{\sigma\sqrt{2\Delta}t}$$
+$$m=1$$
+$$d=e^{-\sigma\sqrt{2\Delta}t}=\frac{1}{u}$$
 
-The components of these equations are the Natural Logarithm $$e$$, the duration of the time step `delta t`, and the volatility of the proposed investment `sigma`. (We’ll show later how to calculate these and other variables; for now simply assume them to be known.) The desired outputs are the factors `u`, `d` and `m`, by which the investment may increase, decrease, or remain the same, respectively.  It is from these three moves that the Trinomial is named.
+The components of these equations are the constant $e$, the duration of the time step $\Delta{t}$, and the volatility of the proposed investment $\sigma$. (We’ll show later how to calculate these and other variables; for now simply assume them to be known.) The desired outputs are the factors $u$, $d$ and $m$, by which the investment may increase, decrease, or remain the same, respectively.  It is from these three moves that the Trinomial is named.
 
-With the factors determined, you build the lattice by taking your starting point (called the Spot) and multiplying it by the `u`, `d` and `m` factors.
+With the factors determined, you build the lattice by taking your starting point $S_0$ (called the Spot) and multiplying it by the $u$, $d$ and $m$ factors.
 
 ![]({static}equations_step_one.png)
 
-Then, those three results are themselves multiplied by `u`, `d` and `m`, creating still more nodes.
+Then, those three results are themselves multiplied by $u$, $d$ and $m$, creating still more nodes.
 
 ![]({static}equations_step_two.png)
 
 This continues for a given number of steps until the option’s term (the period within which it must be exercised) expires.
 
-An interesting feature to note is that the `u` and `d` factors are reciprocals of one another. This means that going up in one step and then down in the next results in the same value as if you went down and then up.
+An interesting feature to note is that the $u$ and $d$ factors are reciprocals of one another. This means that going up in one step and then down in the next results in the same value as if you went down and then up.
 
 ![]({static}recipricol.png)
 
@@ -41,114 +43,101 @@ In fact, any combination of up/down/flat moves results in the same possible futu
 
 On completion of Step One you have a lattice of arbitrary size, comprised of each potential combination expected values, from a single time zero value into n values at the option expiry.
 
-#### Step Two: Consider the Option
+#### Step Two: Calculate Terminal Values
 
 Step Two is about factoring the choice the option represents into its value at expiration.  There is no requirement that you exercise an option; it’s a right to purchase, not an obligation.  Accordingly, if the option is a net positive we use that value; if it’s a net negative we walk away and the value is zero. Step Two simply keeps the positive values and zeros the rest.
 
-Calculating the exercise value is fairly simple: just subtract the proposed investment (called the Strike, or `K`) from that possible future value (the future Spot, called `Sn`) and take the difference or zero, whichever is greater. For instance, if the future value is $2 and the investment is $5 we’d lose $3 if we did that deal, but since we are under no obligation to buy we simply walk away. If instead the future value were $12 we’d make $7, and take that deal. Mathematically, we write this as:
+Calculating the exercise value is fairly simple: just subtract the proposed investment (called the Strike, or $K$) from that possible future value (the future Spot, called $S_n$) and take the difference or $0$, whichever is greater. For instance, if the future value is $2 and the investment is $5 we’d lose $3 if we did that deal, but since we are under no obligation to buy we simply walk away. If instead the future value were $12 we’d make $7, and take that deal. Mathematically, we write this as:
 
-![]({static}exercise_equation.png)
+$$Max[S_n-K, 0]$$
 
-Simply apply that to every possible expected value at expiry, and you have the total range of exercise values at the end of the option’s term.
+Simply apply that to every possible expected value at expiry, and you have the total range of terminal values at option expiry.
 
 ![]({static}max_equation_applied.png)
 
-#### Step Three: Calculate the Discounted Expected Value
+#### Step Three: Calculate the Discounted Expected Values
 
-Finally, we work from those potential future values back to the present. We are sequentially saying, “OK, if this is a future outcome, what does it look like right before that outcome?”  We determine that by summing the discounted expected value equations for the three child nodes into their parent node.
+Finally, we work from those potential future terminal values back to the present. We are sequentially saying, “OK, if this is a future outcome, what does it look like right before that outcome?”  We determine that by summing the discounted expected value equations for the three child nodes into their parent node.
 
 So, starting with the penultimate nodes, calculate these using the factors:
 
-![]({static}return_equations.png)
+$$p_u = \left(\frac{e^{(r - q)  \Delta t / 2}- e^{-\sigma\sqrt {\Delta t/2}}}{e^{\sigma\sqrt {\Delta t/2}}- e^{-\sigma\sqrt {\Delta t/2}}}\right)^2 \,$$
+$$p_m = 1 - (p_u + p_d) \,$$
+$$p_d = \left(\frac{e^{\sigma\sqrt {\Delta t/2}}-e^{(r - q)  \Delta t / 2}}{e^{\sigma\sqrt {\Delta t/2}}- e^{-\sigma\sqrt {\Delta t/2}}}\right)^2 \,$$
 
-The equations here are the most complex, but in plain English they say, “multiply the exercise values by their expected value, and sum those results taking into account the time value of money at the risk-free rate `r`.”
+
+The equations here are the most complex, but in plain English they say, “multiply the terminal values by their expected value, and sum those results taking into account the time value of money at the risk-free rate $r$ less any possible dividend-yield $q$.”
 
 ![]({static}return_equations_applied.png)
 
 Continue calculating backward column by column, node by node, through the entire lattice.  Repeating this process back to time zero results in a single number that represents the value of the option today.
 
+![]({static}final_value.png)
+
+
 Thus, in contrast to a traditional project where value is determined from a single estimated future outcome, an option considers many different future outcomes, calculates their relative probability, and sums together their discounted expected values to get the current value.
+
+
+### Trinomial Variables
+
+Now that we have a general understanding of how the Trinomial Model is constructed, we can turn to how each variable is determined.
+
+*   The constant $e$.
+*   The risk-free rate ($r$), or the rate of return on an investment considered to have zero-risk.
+*   The dividend-yield rate ($q$), or the expected dividends during the option period divided by the spot price of the underlying investment.
+*   The strike $K$, which is the agreed-upon future price at which the option would be exercised.
+*   The spot $S$, which is the market price of the underlying instrument at any given time, and is used as the value of the initial node $S_0$ at time zero.
+*   The time period $\Delta{t}$, which is the annualized period of time until expiry divided by the number of iterations.  In our example above, the number of iterations is four ($S_0$ -> $S_4)$, and if we assume the duration to be one year then the $\Delta{t}$ is one fourth of one, or .25.
+*   The sigma ($\sigma$) is the standard deviation of the log-returns for historical prices of the underlying instrument, and is a measure of overall volatility.  It is calculated through the following equation, for time periods $T$ and spot price $X$.
+
+$${\sigma} = \sqrt{\frac{1}{T}\sum_{t=1}^T \left(\ln(X_{t}) - \ln(X_{t-1})\right)^2}$$
+
+*   Finally, we have the dependent variable $P_0$, which is the output of the trinomial model and represents the price of the option, or its Premium.
+
 
 
 ### Applied to Innovation
 
-Conceptually, Innovation Options are similar to their traditional counterparts: they represent the right, but not the obligation, to make a future purchase at a fixed price, thus delaying the investment decision until more is known about the market. In the Innovation context, the investment decision is the answer to the question: ‘should we enter the market for this innovative product?’ Therefore the negotiated price -- the Strike -- is the investment we’d make to develop and market that product. Think of it as a Series A round: how much would you raise in a Series A for this idea? That is the Strike of an Innovation Option.
+Conceptually, Innovation Options are similar to their traditional counterparts: they represent the right, but not the obligation, to make a future purchase at a fixed price, thus delaying the investment decision until more is known about the market. In the innovation context, the investment decision is "should we enter the market for this new product?" and the option is designed to value the resources allocated to determine the answer to that question.  Therefore, to apply the Trinomial Model to innovation we must outline the analogues to each of the variables that go into it.
 
-Next, we need to determine a Spot value. Normally we’d use a stock quote for the spot, but obviously there is no such quote available for our innovation project. However, we do know that if the option is exercised it will have cash in the bank; namely, the cash provided by the exercise of the option itself. For example, if you exercised the option with a Strike of $50K and then immediately sold it, it could only be worth $50K since there has been no time to create any other value. Thus, we are able to approximate the starting point (the Spot) by making it equivalent to the Strike.
+Some of these are fairly straightforward: the constant $e$ is always $e$, as is the risk-free rate $r$.  Additionally, absent truly extraordinary circumstances, the innovation project will not return any dividends and so the dividend-yield $q$ will be zero.
 
-Next, we consider the term for the Innovation Option. Theoretically the term can be any duration, but as a practical matter the option represents the period during which we are gathering new market information so that we can make an informed decision about whether or not to exercise the option (ie, whether or not the Strike investment will be profitable).  These research activities cost money, and so the duration of the option is bounded by the amount of money in question divided by the burn rate.  Therefore, the amount budgeted for exploration is the option Premium (ie, the amount of money that will be spent whether or not the option is exercised) and the option expiration is the date on which that money is depleted.
+Next we address the Strike $K$.  This is the agreed-upon price for the future investment, which in an innovation context represents the investment required to bring the product to market at scale.  This can be thought of as a "Series A" investment, or the budgetary request of a more typical NPV-backed proposal.  This varies from project to project dependent on the industry, but as a rough guideline typically ranges in the single-digit to hundreds of millions of dollars.  Whatever the number, it represents the amount of money the project will receive if the option is exercised.
 
-Finally, we consider the `sigma`. The sigma is the standard deviation of the log-returns for historical prices of the underlying instrument, and is a measure of overall volatility.  The volality represents the range of possibility in the future potential value of the innovation.  It is analogous to the area of the storm path cone in our earlier analogy, and directly relates to the maximum ending value -- the topmost right node -- in our lattice.
+Next, we need to determine a Spot value $S_0$. Normally we’d use the stock quote for the underlying instrument as the spot, but obviously there is no such quote available for innovation projects. However, we do know that if the option were exercised it would receive the Strike as cash.  Further, if we then immediately returned that cash upon exercise, the ultimate return would be zero since there will be no other opportunities to create any additional value. Thus, for our option we are able to approximate the Spot by making it equivalent to the Strike, or $S_0 = K$.
 
-Sigma is calculated through the following equation, for time periods `T` and and the corresponding post-money valuation `X`.
+Next, we must determine $\Delta{t}$, which itself is comprised of the total time $T$ and number of iterations $i$.  To determine $T$, simply guage the duration of the research period and set it to that period in years.  The number of iterations $i$ can be arbitrary, but in an innovation context should correspond roughly to the number of trials expected during the research period $T$.  This makes the time period the duration divided by the iterations, or $\Delta{t}={i}/{T}$.  For example, a one year option that expected to release trial products quarterly would have a $T$ of $1$ and an $i$ of $4$, resulting in a $\Delta{t}$ of $.25$.
 
-![]({static}sigma.png)
+Finally, we consider the $\sigma$.  As with the Spot, we'd normally use stock quotes over time to determine the volatilty of the underlying instrument; no such quotes are available for our innovation projects.  However, we do have an analogue in the form of post-money valuations for ventures in similar industries.  For example, if we were to aggregate the various Series A investments in Artificial Intelligence we would arrive at an implied volatility that can serve as a reasonable approximation for the actual $\sigma$ for an innovation project focused on AI.  Given that Series A investments have natural bounds both in terms of amount and valuation that tend to cluster to a central mean, the resulting $\sigma$ tends to reflect their corresponding industries with remarkable precision.  Whether or not this is mathmatical proof of the fabled "herd mentality" of venture capitalists I leave for others to decide...
 
-I've calculated the `sigma` for various investment areas that you can use in calculating your own innovation options.  Alternatively, firms with a history of investing in innovation projects can use their own internal valuation benchmarks for greater relevance and precision. Simply find previously funded projects similar in scope and concept to the idea being considered, and use their original business plan valuations to create the boundary range. Note that you should consider all projects that were approved and funded--not solely the ones that were successful--to provide the complete picture of the value these ideas command within the firm.
+I've calculated the $\sigma$ for various investment areas that you can use in  your own innovation options, which I keep updated and you can find here.  Alternatively, firms with a history of investing in innovation projects can use their own internal valuation benchmarks for greater relevance and precision. Simply find previously funded projects similar in scope and concept to the idea being considered, and use their original business plan valuations to create the boundary range. Note that you should consider all projects that were approved and funded -- not solely the ones that were successful -- to provide the complete picture of the value these ideas command within the firm.
 
-This leaves us to estimate `i`, or the number of iterations during the life of the option. (`delta t` is solved by `term-in-years`/`i`). In the standard trinomial model, the number of iteration steps is arbitrary because the process is simply a simulation; generally about a dozen iterations suffices for a statistically significant result. However, with Innovation Options we don’t rely on simulated outcomes because we can run actual trials. In fact, that is the entire point of the option: to delay the investment decision until we know more about the market. Thus, with an Innovation Option it’s no longer the idea of “it could go up, it could go down, it could stay the same”--instead, it’s “it _did_ go up, it _did_ go down, it _did_ stay the same”, reflecting the actual value of the information gained during the option’s life.
+At this point we simply need to plug these variables into the equations and run the three steps outlined above.  This results in the dependent variable $P_0$, which represents the value of the option at time zero, or the Premium.  This is the amount that the answer to the question "should we pursue this idea?" is worth to the firm today.
 
-It is important to note that since each iteration represents an assessment of where the idea stands against reality, each iteration must map to a real-world test of one of the idea’s core assumptions. This is called “validated learning”, and it means that our assessment must result from actual customer interaction rather than research or hypotheticals. Thus, the number of iterations should tie directly to the anticipated release cycle for prototypes and other minimal viable product releases. Release cycles themselves are generally related to the sector: again, in our consumer internet v. biotech example, the release cycle of the former is generally measured in weeks, while the latter might be months. The ultimate value of the option is not terribly sensitive to the number of iterations, but holding outcomes to iterations performed does have benefits for effective corporate governance.
+As mentioned before, the duration $T$ and iterations $i$ are fundamentally arbitrary, and can be set to whatever values you wish.  That said, when considered in an innovation context they do take on special significance that should factor into your consideration when considering the Premium.
 
-#### Calculating the Return on Investment
+To explain, the standard Trinomial Model is effectively a simulation (similar to a Monte Carlo analysis).  In contrast, during our experimentation period we are going to run actual trials in the real world. In fact, that is the entire point of the option: we are delaying the more substantial investment decision ($K$) until we know more about the market.  Thus, with an Innovation Option each node no longer represents the *possibility* of “it could go up, it could go down, it could stay the same” -- instead, it reflects the *actual* value of “it _did_ go up, it _did_ go down, it _did_ stay the same”.  We are using the market information gleaned during the experimentation period to give us some sense of which path the investment will take through the lattice.  In this way, the number of iterations $i$ should represent the number of market trials you expect to conduct during the term of the option.
 
-At this point we have all the inputs and equations needed to construct an innovation option. To review, we need:
+Moreover, the resources required to fund this period of experimentation are set, which means that they will only last for a set period of time.  In other words, the expiration for the option $T$ is equivalent to the duration of the funds allocated for that purpose divided by the burn rate.
 
-*   The amount of funding sought to bring the product to market (S, K)
-*   The term of the option (t)
-*   The iterations expected during that term (i)
-*   The sigma (s)
-*   The risk-free rate (r)
+This implies that firms can use an abstract Premium $P_0$ to determine if they are appropriately pricing their early-stage innovation investments.  So, for instance, if the Premium of a given idea is calculated as $250K, but the firm is requesting $2M, this request can be denied on the basis of negative ROI.  Similarly, the firm can invest more heavily in projects whose budget requests represent more attractive returns.  However, the best course of action would be to arbitrage all projects so that the firm can apply the scarce resources of the firm for maximum efficiency.
 
-From that, you first calculate the sigma:
-
-![]({static}1*Aznb61VdkJYUFIN1Zi4ldQ.png)
-
-Then you build the lattice as follows:
-
-![]({static}1*R3HNE8ORyiRt475x6yn7uQ.png)
-
-Determine the exercise payoff:
-
-![]({static}1*8yB419ax8RSccfxsH9hkOw.png)
-
-And finally, calculate all expected values:
-
-![]({static}1*KRAX8U3MeE0jb1Yt8ba8Hg.png)
-
-You now have the option’s initial value. This represents the value in today’s dollars to determine the actual growth potential of the proposed investment. Thus, to calculate the Return on Investment (ROI) of the option we simply subtract the cost required to produce the market information we need to run our iterations. This cost is called the Premium, and it reflects the cost of the option itself (as opposed to the Strike, which represents the proposed future investment.) The difference between the option’s value and its premium is what I call the Option’s Present Value (OPV) and that is its ROI.
-
-For example, let’s suppose we have an idea for a new consumer internet service, say a social network for pets. The idea would need an investment of $3M to bring the concept to market. We’d like to spend 90 days to gather market data to determine the answer, and expect to iterate once a week during that time. The upper bound Series A valuation is determined to be $100M, and the risk-free rate is 1% (current T-bill rate). The budget for the 90 days would be $90K, or $30K a month, fully-burdened.
-
-![]({static}1*YmavgdQ2fXDNevz6WJ3h3Q.png)
-
-Using the Innovation Options model, we determine that the initial value of this option is $800K. However, since we’re only spending $90K, the option represents an ROI of $710K to the firm. It’s also worth noting that the option’s initial value represents the highest possible budget to explore the idea--anything more than that destroys value and has a negative OPV.
-
-#### Measuring Progress
-
-In addition to providing an initial ROI for the option, we can also use the model to measure progress. Recall that the lattice represents the range of possible future values, with each node being a combination outcomes to that point in time. Thus, within that range one of the combinations reflects reality. Or, returning to our storm tracker analogy, when the storm has passed it will have taken a path through the cone that was originally predicted. The path is within the cone; we just don’t know which path yet.
-
-Thus, to estimate the value of the option at any given point in time we simply need to determine which path is real. Since each move represents the up/down/flat determination at each node, to deduce the current estimated value we only need to make periodic assessments relative to the prior iteration. Thus, determining progress reduces to a single, tractable question: “are we in a better, worse, or about the same position as we were before?” Remember, we’re not re-calculating anything; we’re just making assessments along the way which, in aggregate, tell us where we are.
-
-This value estimation is directly related to the number of iterations `i` during the life of the option. The greater the number of possible nodes, the greater the fidelity in the possible future value. Thus, we’re encouraged to conduct as many iterations as possible to improve our value estimation. That said, there are practical limitations to how frequently you can iterate since each must represent a qualified assessment of actual market conditions for the result to be valid. Generally speaking, iteration speed is a function of the market sector: consumer internet ideas might be testable on a weekly basis, while hardware could take a month per release. Yet regardless of speed, it is absolutely critical that each assessment represent the result of actual market data and not conjecture or opinion. The whole point of the option is to inform the investment decision with market data; relying on speculation defeats the entire purpose of the exercise.
 
 #### Advantages
 
-Innovation Options have significant advantages over traditional cash-flow analyses such as Net Present Value (NPV). Most centrally, an options-based approach embraces the uncertainty associated with innovation. Considering a range of possibilities--including complete failure--is at the heart of the model. In contrast, an NPV-based analysis only considers a single outcome based on far-future forecasts that are highly suspect in uncertain markets.
+Innovation Options have significant advantages over traditional cash-flow analyses such as Net Present Value (NPV). Most centrally, an options-based approach embraces the uncertainty associated with innovation. Considering a range of possibilities -- including complete failure -- is at the heart of the model. In contrast, an NPV-based analysis only considers a single outcome based on far-future forecasts that are highly suspect in uncertain markets.
 
-In addition, options are dynamic, adjusting to new information as it becomes available. An NPV analysis is static--once the initial forecast is made it can’t be changed without calling into question the entire financial justification for the project. This also produces a moral hazard: any information that runs counter to the original assumptions tends to be discounted, minimized, or outright ignored in favor of the approved plan. Options encourage transparency because the plan is to gather information, both good and bad.
+In addition, options are dynamic, adjusting to new information as it becomes available. An NPV analysis is static; once the initial forecast is made it can’t be changed without calling into question the entire financial justification for the project. This also produces a moral hazard: any information that runs counter to the original assumptions tends to be discounted, minimized, or outright ignored in favor of the approved plan. Options encourage transparency because the plan is to gather information, both good and bad.
 
-Also, options tend to be much faster to implement than other governance approaches. With an NPV profitability has to be included from the outset; otherwise there is a negative return and the project never gets approved. This leads to concepts like robustness and economies of scale that are misplaced priorities at the earliest innovation stages. Options encourage smaller steps, which reduce the overall variance (ie, the riskiness) of the project.
+Also, options tend to be much faster to implement than other governance approaches. With an NPV profitability has to be included from the outset; projects with negative returns never get approved. This leads to concepts like robustness and economies of scale that are misplaced priorities at the earliest innovation stages. Options encourage smaller steps, which reduce the overall variance (ie, the riskiness) of the project.
 
-In short, options expect you to determine revenue, while NPV expects you to deliver revenue. For well-known products in established markets it is reasonable to use NPV because we somewhat-reliably predict the future. For unknown products in unknown markets with discontinuous innovation, NPV utterly fails.
+In short, options expect you to *determine* revenue, while NPV expects you to *deliver* revenue. For well-known products in established markets it is reasonable to use NPV because we can somewhat-reliably predict the future. For unknown products in unknown markets with discontinuous innovation, NPV fails completely -- and often catastrophically.
 
 ### Limitations
 
-Despite these advantages, it does not mean the Options model is perfect. As with any model, it is susceptible to GIGO: put garbage data in, and you’ll get garbage data out. The model is also substantially more complex than linear approaches. Terms such as sigma and the natural logarithm are not as straightforward as NPV’s method of subtracting current costs against future profits.
+Despite these advantages, it does not mean the Options model is perfect.  To start, it is substantially more complex than linear approaches. Terms such as $\sigma$ and $e$ are unfamiliar and somewhat counter-intuitive, while NPV’s method of subtracting current costs against future profits is much simpler to conceptualize and implement.
 
-Also, while not strictly speaking a limitation, it’s worth noting here that the derived sigma of an Innovation Option is not equatable to a traditional sigma. In a traditional option, the sigma represents the volatility of the underlying security, which is independent of the option itself. In contrast, an Innovation Option’s sigma is calculated from the number of iterations in the option, making the sigma a direct function of the option. (Special thanks [Florian Müller](https://medium.com/u/1efc1730d7ff) for helping me understand this vital distinction.) Thus, the option’s initial value is highly sensitive to the number of iterations, which can be used to game the outcome. Care should be taken to ensure the number of expected iterations is fair and reasonable for the sector.
-
-Similarly, one can manipulate value simply by choosing a higher target raise amount. A higher raise implies a higher valuation, all other variables equal. Still, practical reality bounds the theoretical: in the real world, investment amounts (and related valuations) fall within envelopes that are correlated to the industry sector. For instance, consumer internet software plays tend to require less up-front capital and thus have lower raise amounts and valuations relative to sectors like biotech, which have larger needs and correspondingly larger valuations. Thus, the nature of the idea (and its sector) tend to constrain to a particular fundraising target which itself then reflects a particular valuation range.
+Also, while not strictly speaking a limitation, it’s worth noting here that some of the underlying variables such as the Sigma are lossier in opaque markets than they are in open markets, and so the resulting Premium is far from perfect.  That said, this valuation will always be superior to an NPV valuation which, for markets without any history, is at best a fabrication (if not an outright deception.)
 
 In general, the way to address these limitations is to be as honest as possible in inputs and assessments. Again, while NPV-style investments discourage any information that runs counter to the initial forecast, options encourage the reality whatever it may be. If an NPV investment doesn’t provide a return, it fails. In contrast, an option only fails if it reaches the wrong conclusion. Thus, the former encourages confirmation bias while the latter encourages truth, for good or ill.
 
