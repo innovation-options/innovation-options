@@ -7,7 +7,9 @@ A personal embarrassment precipitated my appreciation for the three innovation t
 
 The PM was right, of course--he had innovated throughout his entire career without any need for “fail-fast” this, or “customer development” that. Yet my face-saving comment was also accurate. The firm was facing significant threats from new technologies, and what worked for the last 30 might not take them through the next three. The disconnect was that we were using the same term to refer to different innovation types.
 
-Innovation is not homogenous. In his seminal work “[The Innovator’s Dilemma](https://en.wikipedia.org/wiki/The_Innovator%27s_Dilemma)”, Clayton Christensen discussed the three main forms of innovation: sustaining, disruptive, and revolutionary (yep, there’s a third!) Each type has specific characteristics which in turn suggest specific management approaches.
+####Innovation Is Not Homogenous
+
+In his seminal work “[The Innovator’s Dilemma](https://en.wikipedia.org/wiki/The_Innovator%27s_Dilemma)”, Clayton Christensen discussed the three main forms of innovation: sustaining, disruptive, and revolutionary (yep, there’s a third!) Each type has specific characteristics which in turn suggest specific management approaches.
 
 The continuous business model set represents the production, marketing, distribution, etc. systems that keep your profit engine running (ie, how the company currently makes money.) Any discontinuity is a different approach that doesn’t fit within the context of that model--retail channels in a direct sales model, for instance. The discontinuous technological set refers to a non-linear shift in capabilities that essentially renders current systems obsolete, while continuous improvements are those which are built upon, and can integrate with, existing processes.
 
