@@ -28,23 +28,14 @@
           <h4>Input</h4>
         </div>
         <div class='card-body'>
-          <div class='row my-3 align-items-center justify-content-between'>
-            <div class='col-4'>
-              <label for='strike' class='form-label'>
-                Strike
-              </label>
-            </div>
-            <div class='col-8'>
-              <input id='strike' type='tel' value='20' name='strike' class='form-control'>
+          <div class='my-3 align-items-center justify-content-between'>
+            <div class='form-floating'>
+              <input id='strike' type='tel' placeholder='Strike' value='20' name='strike' class='form-control'>
+              <label for='strike'>Strike</label>
             </div>
           </div>
-          <div class='row my-3 align-items-center justify-content-between'>
-            <div class='col-4'>
-              <label for='term' class='form-label'>
-                Term
-              </label>
-            </div>
-            <div class='col-8'>
+          <div class='my-3 align-items-center justify-content-between'>
+            <div class='form-floating'>
               <select id='term' class='form-select'>
                 <option value='One Quarter'>One Quarter</option>
                 <option value='Six Months'>Six Months</option>
@@ -53,15 +44,11 @@
                 <option value='Two Years'>Two Years</option>
                 <option value='Four Years'>Four Years</option>
               </select>
+              <label for='term'>Term</label>
             </div>
           </div>
-          <div class='row my-3 align-items-center justify-content-between'>
-            <div class='col-4'>
-              <label for='offset' class='form-label'>
-                Offset
-              </label>
-            </div>
-            <div class='col-8'>
+          <div class='my-3 align-items-center justify-content-between'>
+            <div class='form-floating'>
               <select id='offset' class='form-select'>
                 <option value='Weekly'>Weekly</option>
                 <option value='Bi-Weekly'>Bi-Weekly</option>
@@ -71,15 +58,11 @@
                 <option value='Semi-Annually'>Semi-Annually</option>
                 <option value='Annually'>Annually</option>
               </select>
+              <label for='offset' class='form-label'>Offset</label>
             </div>
           </div>
-          <div class='row my-3 align-items-center justify-content-between'>
-            <div class='col-4'>
-              <label for='offset' class='form-label'>
-                Sigma
-              </label>
-            </div>
-            <div class='col-8'>
+          <div class='my-3 align-items-center justify-content-between'>
+            <div class='form-floating'>
               <select id='sigma' class='form-select'>
                 <option value='Very Low'>Very Low</option>
                 <option value='Low'>Low</option>
@@ -87,6 +70,7 @@
                 <option value='High'>High</option>
                 <option value='Very High'>Very High</option>
               </select>
+              <label for='offset'>Sigma</label>
             </div>
           </div>
           <div class='d-grid gap-2 mt-4 mb-2'>
