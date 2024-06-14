@@ -28,11 +28,11 @@ function calculateOption() {
   };
 
   const sigmaMap = {
-    'Very Low': 0.12,
-    'Low': 0.37,
-    'Moderate': .62,
-    'High': .89,
-    'Very High': 1.2,
+    'Very Low': 0.25,
+    'Low': 0.5,
+    'Moderate': .75,
+    'High': 1,
+    'Very High': 1.5,
   };
 
   let offset = offsetMap[offsetChoice];

@@ -12,99 +12,101 @@
   <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/calculator.js"></script>
 {% endblock scripts %}
 
-{% block calculatorActive %}active{% endblock calculatorActive %}
-
 {% block content %}
-  <main class='container'>
-    <div class='row justify-content-center my-5'>
-      <div class='col-lg-4 m-3'>
-        <div class='card'>
-          <div class='card-header'>
-            <h4>Input</h4>
+  <main class='container my-5'>
+    <header class='my-3'>
+      <h2>
+        Calculator
+      </h2>
+      <p class='lead my-3'>
+        This tool can be used to calculate the Premium and Value Tree of Your Innovation Option.
+      </p>
+    </header>
+    <div class='col-lg-6 mx-auto'>
+      <div class='card my-5'>
+        <div class='card-header'>
+          <h4>Input</h4>
+        </div>
+        <div class='card-body'>
+          <div class='row my-3 align-items-center justify-content-between'>
+            <div class='col-4'>
+              <label for='strike' class='form-label'>
+                Strike
+              </label>
+            </div>
+            <div class='col-8'>
+              <input id='strike' type='tel' value='20' name='strike' class='form-control'>
+            </div>
           </div>
-          <div class='card-body'>
-            <div class='row my-3 align-items-center justify-content-between'>
-              <div class='col-4'>
-                <label for='term' class='form-label'>
-                  Term
-                </label>
-              </div>
-              <div class='col-8'>
-                <select id='term' class='form-select'>
-                  <option value='One Quarter'>One Quarter</option>
-                  <option value='Six Months'>Six Months</option>
-                  <option value='One Year'>One Year</option>
-                  <option value='Year and a Half'>Year and a Half</option>
-                  <option value='Two Years'>Two Years</option>
-                  <option value='Four Years'>Four Years</option>
-                </select>
-              </div>
+          <div class='row my-3 align-items-center justify-content-between'>
+            <div class='col-4'>
+              <label for='term' class='form-label'>
+                Term
+              </label>
             </div>
-            <div class='row my-3 align-items-center justify-content-between'>
-              <div class='col-4'>
-                <label for='offset' class='form-label'>
-                  Offset
-                </label>
-              </div>
-              <div class='col-8'>
-                <select id='offset' class='form-select'>
-                  <option value='Weekly'>Weekly</option>
-                  <option value='Bi-Weekly'>Bi-Weekly</option>
-                  <option value='Monthly'>Monthly</option>
-                  <option value='Bi-Monthly'>Bi-Monthly</option>
-                  <option value='Quarterly'>Quarterly</option>
-                  <option value='Semi-Annually'>Semi-Annually</option>
-                  <option value='Annually'>Annually</option>
-                </select>
-              </div>
+            <div class='col-8'>
+              <select id='term' class='form-select'>
+                <option value='One Quarter'>One Quarter</option>
+                <option value='Six Months'>Six Months</option>
+                <option value='One Year' selected>One Year</option>
+                <option value='Year and a Half'>Year and a Half</option>
+                <option value='Two Years'>Two Years</option>
+                <option value='Four Years'>Four Years</option>
+              </select>
             </div>
-            <div class='row my-3 align-items-center justify-content-between'>
-              <div class='col-4'>
-                <label for='offset' class='form-label'>
-                  Sigma
-                </label>
-              </div>
-              <div class='col-8'>
-                <select id='sigma' class='form-select'>
-                  <option value='Very Low'>Very Low</option>
-                  <option value='Low'>Low</option>
-                  <option value='Moderate'>Moderate</option>
-                  <option value='High'>High</option>
-                  <option value='Very High'>Very High</option>
-                </select>
-              </div>
+          </div>
+          <div class='row my-3 align-items-center justify-content-between'>
+            <div class='col-4'>
+              <label for='offset' class='form-label'>
+                Offset
+              </label>
             </div>
-            <div class='row my-3 align-items-center justify-content-between'>
-              <div class='col-4'>
-                <label for='strike' class='form-label'>
-                  Strike
-                </label>
-              </div>
-              <div class='col-8'>
-                <input id='strike' type='tel' value='5' name='strike' class='form-control'>
-              </div>
+            <div class='col-8'>
+              <select id='offset' class='form-select'>
+                <option value='Weekly'>Weekly</option>
+                <option value='Bi-Weekly'>Bi-Weekly</option>
+                <option value='Monthly'>Monthly</option>
+                <option value='Bi-Monthly'>Bi-Monthly</option>
+                <option value='Quarterly' selected>Quarterly</option>
+                <option value='Semi-Annually'>Semi-Annually</option>
+                <option value='Annually'>Annually</option>
+              </select>
             </div>
-            <div class='d-grid gap-2 m-3'>
-              <input id="calculate" type="button" value="Calculate" class="btn btn-lg btn-outline-primary" onclick="calculateOption();" />
+          </div>
+          <div class='row my-3 align-items-center justify-content-between'>
+            <div class='col-4'>
+              <label for='offset' class='form-label'>
+                Sigma
+              </label>
             </div>
+            <div class='col-8'>
+              <select id='sigma' class='form-select'>
+                <option value='Very Low'>Very Low</option>
+                <option value='Low'>Low</option>
+                <option value='Moderate' selected>Moderate</option>
+                <option value='High'>High</option>
+                <option value='Very High'>Very High</option>
+              </select>
+            </div>
+          </div>
+          <div class='d-grid gap-2 mt-4 mb-2'>
+            <input id="calculate" type="button" value="Calculate" class="btn btn-lg btn-outline-primary" onclick="calculateOption();" />
           </div>
         </div>
       </div>
-      <div class='col-lg-4 m-3'>
-        <div class='card'>
-          <div class='card-header'>
-            <h4>Output</h4>
-          </div>
-          <div class='card-body'>
-            <div class='row my-3 align-items-center justify-content-between'>
-              <div class='col-4'>
-                <label for='premium' class='form-label'>
-                  Premium
-                </label>
-              </div>
-              <div class='col-8'>
-                <input id='premium' class="form-control" type="text" value="" readonly>
-              </div>
+      <div class='card my-5'>
+        <div class='card-header'>
+          <h4>Output</h4>
+        </div>
+        <div class='card-body'>
+          <div class='row my-3 align-items-center justify-content-between'>
+            <div class='col-4'>
+              <label for='premium' class='form-label'>
+                Premium
+              </label>
+            </div>
+            <div class='col-8'>
+              <input id='premium' class="form-control" type="text" value="" readonly>
             </div>
           </div>
         </div>
