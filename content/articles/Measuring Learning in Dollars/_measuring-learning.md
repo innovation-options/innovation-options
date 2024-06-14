@@ -34,19 +34,20 @@ Innovation Options apply the financial option framework to new product developme
 
 ### Example
 
-John is a Fortune 500 product manager for a line of household consumer goods. He sees disruptive potential in the “Internet of Things” and believes a connected, smart doorbell could be just the innovation his aging product line needs to spur new growth. As with any new proposal, John must present his business case to Sarah, who heads the investment committee that approves new projects. The business case must show the ROI, but John is hesitant to present a traditional NPV analysis because he has no confidence forecasting revenues for a non-existent product category. Instead, he decides to frame the project as an Innovation Option.
+John is a Fortune 500 product manager for a line of household consumer goods. He sees disruptive potential in Artificial Intelligence and believes an AI-powered doorbell could be just the innovation his aging product line needs to spur new growth. As with any new proposal, John must present his business case to Sarah, who heads the investment committee that approves new projects. The business case must show the ROI, but John is hesitant to present a traditional NPV analysis because he has no confidence forecasting revenues for a non-existent product category. Instead, he decides to frame the project as an Innovation Option.
 
 #### Determine the Inputs
 
-To generate the innovation option pricing model, John has to provide three inputs.
+John has to provide three inputs to the Innovation Option model:
 
-1.  **Main Investment Budget** John is very good at budgeting costs (he is a Fortune 500 PM after all) and believes that the doorbell could be produced at scale with a $20M investment. This includes all the normal development and marketing costs such as headcount, capex, promotion, etc.. It is, in effect, the budget request he would have made under a traditional NPV approach.
-2.  **Best-Case Scenario** John also needs to judge the best-case scenario for the market potential of the doorbell. This is not a specific revenue projection (so he can breathe a sigh of relief) but instead answers the question, “If everything goes right, how big could this product possibly be?” The firm currently has 5% of the doorbell market, and with 100M US Households and an ASP of $50 John thinks the best case scenario is a $200M market for the doorbell. It is roughly equivalent to an (optimistic) NPV horizon value.
-3.  **Option Terms** Options are not open-ended research projects; John must set a duration and evaluation interval for the option from the outset. He has extensive experience with stagegate reporting, so again this task will feel familiar. In John’s example we’ll keep things simple and use a duration of one year and with quarterly reporting; ideally options will have shorter duration and reporting intervals based upon the product’s release cycle.
+1.  **Main Investment Budget** John is very good at budgeting costs (he is a Fortune 500 PM after all) and believes that the doorbell could be produced at scale with a $20M investment. This includes all the normal development and marketing costs such as headcount, capex, promotion, etc.. It is, in effect, the budget request he would have made under a traditional NPV approach.  For an option, this is known as the *Strike*.
+2.  **Project Schedule** Next, John has to set up a schedule and evaluation timeline.   His doorbell project is not an open-ended research exercise; he will be expected to test the market and report results. John has extensive experience with stagegate, so again this task will feel familiar. In this example we’ll keep things simple and use a duration of one year and with quarterly reporting.  For an option, this is used to calculate the *Expiration* and *Iterations*.
+3.  **Risk Estimate**  Finally, John needs to estimate the relative riskiness of the project.  And risk in this context is not specific to the project such as whether finance will approve or the success esimate; it is instead the relative volatility of the market which John's project will enter.  He estimates the risk as moderate.  For an option, this is known as the *Sigma*.
+
 
 #### Creating the Model
 
-The math for an Option is more complicated than NPV (a version of this won the Nobel Prize for economics after all) but here is the gist: the model simulates every possible combination of things going well, things going poorly, or things staying the same. Then, it sums the discounted expected value of each of those individual paths to that point. The net result is a tree representing every potential value of the option at every point in time. Future posts will go into the math in more detail, but know that this same method is trusted to price billions of dollars worth of options worldwide, every day.
+The math for an Option is more complicated than NPV (a version of this pricing model won the Nobel Prize for economics after all) but here is the gist: the model simulates every possible combination of things going well, things going poorly, or things staying the same. Then, it sums the discounted expected value of each of those individual paths to that point. The net result is a tree representing every potential value of the option at every point in time. Future posts will go into the math in more detail, but for now simply know that this same method is trusted to price billions of dollars worth of options worldwide, every day.
 
 Once applied, the inputs produce a pricing tree that looks like this (in millions of dollars):
 
@@ -58,7 +59,7 @@ Before we can do anything we need to get the project approved, which means figur
 
 ![]({static}step_zero_pricing_tree.png)
 
-Again, John’s a budget wizard so he quickly outlines a plan that will cost $2M over the course of the year. This includes all the resources he’ll need to produce demos, prototypes and fund his team during that period. Therefore, the ROI is simply the ($6.5M) less that budget request ($2M), or $4.5M.
+Again, John’s a budget wizard so he quickly outlines a plan that will cost $2M over the course of the year. This includes all the resources he’ll need to produce demos, prototypes and fund his team during that period. Therefore, the ROI is simply the $6.5M less than the budget request of $2M, or $4.5M.
 
 John sits down with Sarah and pitches the entire business case, including showing the NOV (Net Option Value) of $4.5M. After reviewing all the potential projects in the pipeline, she and the investment team approve the funding request for the option, and John gets to work.
 
@@ -98,7 +99,7 @@ We now see the full path of the project. While things didn’t always go as plan
 
 ![]({static}bad_path.png)
 
-Of course, things do not always take the happy path. Instead, let’s consider what happens if in Q3 instead of signing the distribution agreement things gets pushed back again--another flat move. Then, in Q4, the shoe drops and the retail partners refuse to sign: a clear downgrade. The option value drops to zero, and the project does not proceed at scale since it makes no sense to invest $20M building a product that no retail channel will carry.
+Of course, things do not always take the happy path. Instead, let’s consider what happens if in Q3 instead of signing the distribution agreement things gets pushed back again -- another flat move. Then, in Q4, the shoe drops and the retail partners refuse to sign: a clear downgrade. The option value drops to zero, and the project does not proceed at scale since it makes no sense to invest $20M building a product that no retail channel will carry.
 
 #### The Ugly
 
