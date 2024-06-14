@@ -1,6 +1,7 @@
 Title: Measuring Learning in Dollars
 Date: 2024-01-01
 Slug: measuring-learning
+Category: learn
 Status: published
 Summary:  How to Measure ROI without Forecasting Revenue.
 Image: {static}its_a_trap.gif

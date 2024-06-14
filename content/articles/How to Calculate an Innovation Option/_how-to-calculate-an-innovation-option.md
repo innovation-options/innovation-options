@@ -1,6 +1,7 @@
 Title: How to Calculate an Innovation Option
 Date: 2024-01-04
 Summary: The mathematics behind the innovation option formula.
+Category: learn
 
 
 Innovation Options measure the return on investment (ROI) of pre-growth initiatives based on the option value they provide to the firm. They are an effective alternative to traditional, cash-flow based approaches such as Net Present Value which fail under conditions of high market uncertainty.

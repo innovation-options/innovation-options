@@ -1,6 +1,7 @@
 Title: Innovation Options Calculator
 Date: 2024-01-05
 Summary: Instructions on how to use the Innovation Options Calculator.
+Category: learn
 
 The Innovation Options calculator is a simple tool to run an ROI analysis on your pre-growth initiatives. This post will explain how to use and read the tool; to learn more about the concepts and mathematics behind Innovation Options [click here](innovation-options).
 

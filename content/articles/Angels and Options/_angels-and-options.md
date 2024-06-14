@@ -1,6 +1,7 @@
 Title: Angels and Options
 Date: 2024-01-06
 Slug: angels-and-options
+Category: learn
 Status: published
 Summary: How pre-growth investors view their portfolios.
 Image: {static}mcclure_taxi.png

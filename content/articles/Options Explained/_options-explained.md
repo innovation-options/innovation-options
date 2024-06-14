@@ -4,6 +4,7 @@ Slug: options-explained
 Status: published
 Summary:  A step-by-step guide to understanding financial options.
 Image: images/options-explained/index.jpg
+Category: learn
 
 ![]({static}gekko.jpg)
 
