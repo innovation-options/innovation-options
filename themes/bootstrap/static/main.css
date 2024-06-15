@@ -3,3 +3,9 @@
 p {
     margin-bottom: 2rem;
 }
+
+/*Fix for floating label in row bug*/
+
+.row > .form-floating > label {
+    margin-left:0.75em;
+}

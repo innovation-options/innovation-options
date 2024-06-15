@@ -28,14 +28,17 @@
           <h4>Input</h4>
         </div>
         <div class='card-body'>
-          <div class='my-3 align-items-center justify-content-between'>
-            <div class='form-floating'>
+          <div class='row my-3 align-items-center'>
+            <div class='form-floating col-lg-4'>
               <input id='strike' type='tel' placeholder='Strike' value='20' name='strike' class='form-control'>
               <label for='strike'>Strike</label>
             </div>
+            <div class='col-lg-8 my-2'>
+              The strike is the amount of investment sought if the project demonstrates success.
+            </div>
           </div>
-          <div class='my-3 align-items-center justify-content-between'>
-            <div class='form-floating'>
+          <div class='row my-3 align-items-center'>
+            <div class='form-floating col-lg-4'>
               <select id='term' class='form-select'>
                 <option value='One Quarter'>One Quarter</option>
                 <option value='Six Months'>Six Months</option>
@@ -46,9 +49,12 @@
               </select>
               <label for='term'>Term</label>
             </div>
+            <div class='col-lg-8 my-2'>
+              The term is how long you expect to test the project against the market to see how successful it might be.
+            </div>
           </div>
-          <div class='my-3 align-items-center justify-content-between'>
-            <div class='form-floating'>
+          <div class='row my-3 align-items-center'>
+            <div class='form-floating col-lg-4'>
               <select id='offset' class='form-select'>
                 <option value='Weekly'>Weekly</option>
                 <option value='Bi-Weekly'>Bi-Weekly</option>
@@ -58,11 +64,14 @@
                 <option value='Semi-Annually'>Semi-Annually</option>
                 <option value='Annually'>Annually</option>
               </select>
-              <label for='offset' class='form-label'>Offset</label>
+              <label for='offset' class='form-label'>Iterations</label>
+            </div>
+            <div class='col-lg-8 my-2'>
+              The Iterations are how frequently you intend to report progress to your investment board.
             </div>
           </div>
-          <div class='my-3 align-items-center justify-content-between'>
-            <div class='form-floating'>
+          <div class='row my-3 align-items-center'>
+            <div class='form-floating col-lg-4'>
               <select id='sigma' class='form-select'>
                 <option value='Very Low'>Very Low</option>
                 <option value='Low'>Low</option>
@@ -72,13 +81,16 @@
               </select>
               <label for='offset'>Sigma</label>
             </div>
+            <div class='col-lg-8 my-2'>
+              The Sigma is the relative riskiness of the underlying technology or industry on which the project is based.
+            </div>
           </div>
           <div class='d-grid gap-2 mt-4 mb-2'>
             <input id="calculate" type="button" value="Calculate" class="btn btn-lg btn-outline-primary" onclick="calculateOption();" />
           </div>
         </div>
       </div>
-      <div class='card my-5'>
+      {# <div class='card my-5'>
         <div class='card-header'>
           <h4>Output</h4>
         </div>
@@ -94,9 +106,12 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> #}
     </div>
     <div class='mt-5 text-center'>
+      <h2>
+        <span id='premium'></span>
+      </h2>
       <h4>
         <span id='tree-title'></span>
       </h4>

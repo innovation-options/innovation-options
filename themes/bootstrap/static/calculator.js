@@ -217,7 +217,7 @@ function calculateOption() {
     `;
   }
 
-  document.getElementById('premium').value = premium.toFixed(1);
+  document.getElementById('premium').innerHTML = `The Premium for this Option is: ${premium.toFixed(1)}`;
   document.getElementById("valuation-tree").innerHTML = createTable(valueArray);
   document.getElementById("tree-title").innerHTML = "Pre-Money Valuation Tree";
 
