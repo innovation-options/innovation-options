@@ -12,4 +12,4 @@ jobs:
       id-token: "write"
     with:
       settings: "pelicanconf.py"
-      requirements: "pelican markdown typogrify beautifulsoup4"
+      requirements: "pelican markdown typogrify beautifulsoup4 pelican-render-math"
