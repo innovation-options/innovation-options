@@ -1,4 +1,4 @@
-const { log, sqrt, exp, pow, max } = Math;
+const { log, sqrt, exp, pow, max, floor } = Math;
 
 function calculateOption() {
   let strike = document.getElementById("strike").value;
@@ -19,6 +19,7 @@ function calculateOption() {
   };
 
   const termMap = {
+    'One Month': 0.083,
     'One Quarter': 0.25,
     'Six Months': 0.50,
     'One Year': 1.0,
@@ -41,7 +42,7 @@ function calculateOption() {
 
 
   function getIterations(offset, term) {
-    return offset * term;
+    return floor(offset * term);
   };
 
   let iterations = getIterations(offset, term);
