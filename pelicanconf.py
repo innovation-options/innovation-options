@@ -19,7 +19,9 @@ USE_FOLDER_AS_CATEGORY = False
 
 MARKDOWN = {
     'extension_configs': {
-        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.codehilite': {
+            'css_class': 'highlight',
+        },
         'markdown.extensions.extra': {},
         'markdown.extensions.meta': {},
         'markdown.extensions.smarty': {},
@@ -29,12 +31,17 @@ MARKDOWN = {
 
 DEFAULT_DATE = 'fs'
 
+IGNORE_FILES = [
+]
+
 STATIC_PATHS = [
 ]
 
 PAGE_EXCLUDES = STATIC_PATHS
 
-LOG_FILTER = [(30, 'Empty alt attribute for image %s in %s')]
+LOG_FILTER = [
+    (30, 'Empty alt attribute for image %s in %s'),
+]
 
 DEFAULT_PAGINATION = False
 

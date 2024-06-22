@@ -1,0 +1,15 @@
+# Innovation Premium
+
+
+
+Here's the methodology, in prose.  The goal is to find the Innovation Premium, defined as the portion of market value attributable to innovation.  Innovation in this context represents the future growth opportunities for the firm and the cash flows they represent.  This is encapsulated in the Present Value of Growth Opportunities (PVGO).  The PVGO is determined by taking the Earnings per Share and dividing by the Weighted Average Cost of Capital (WACC), and subtracting that from the market share price.  EPS / WACC represents the no-growth (ie, no innovation) value of the firm, so the difference between that and the actual share price represents the net present value of innovation. (These calculations are based on the dividend discount model which is a well-accepted method of valuation.)
+
+Example of XL; For 2016, the EPS was 1.56, and the WACC was 8.07% for a no-growth value of $19.33 per share.  The closing price was $37.26, which puts your PVGO at $17.93, or 48% of the total stock value.  With a total market cap of $9.944M that put a present value of growth from all sources at $4.7B.  However, the vast majority of this innovation value is from sustaining/continuous innovation; ie, the normal growth of the market.  Thus, to determine XL's value from discontinuous innovation, we need to figure out how the market values normal growth.
+
+To do that I've take the relevant-sector (all forms and similar financial services) of the S&P1500 composite index (representing about 90% of the US market) and calculated its PVGO in the same manner.  Those were EPS 24.76, WACC 7.90%, and price of $429.46.  That turns out to a PVGO of $116.0, or 27% of the total market value.  If we take that 27% as baseline expectation, and subtract it from XL's 48% the difference represents the premium the market is paying in anticipation of innovation that outperforms the market (ie, the innovation premium.). The overall innovation premium at the end of 2016 was $7.82, or a total value of $2.08B.  
+
+The final process would be to determine how much of that value accrues to the example versus other discontinuous innovation throughout the firm.  To do this we'd need to calculate the resources allocated to each and apply that pro-rata to the available premium;
+
+I don't have many caveats on the methodology itself; all the models I used are well known and accepted.  The WACC and market price are also unambiguous.  However, I can't say the same for the EPS.  That can and does jump around quite a bit, particularly since it's very common to combine all bad news into a single quarter, or extraordinary below-the-line items, or natural disasters . 
+
+The long term, macro goal is to track the Innovation Premium as a measure of the overall success of the internal innovation activities of the firm.
