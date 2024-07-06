@@ -2,10 +2,10 @@ Title: Technology Adoption Lifecycle
 Date: 2024-06-22
 Status: published
 Category: more
-Summary: Everit Rogers's Diffusion of Innovation is one of the most important marketing concepts of the 20th Century.
+Summary: Everett Rogers's Diffusion of Innovation is one of the most important marketing concepts of the 20th Century.
 
 
-Everett Rodgers's 1962 work *Diffusion of Innovations* is considered one of the most important marketing concepts of the last century.  In it, he described a Technology Adoption Lifecycle that shows how new ideas spread through an environment, following predictable patterns and categories of users.
+Everett Rogers's 1962 work *Diffusion of Innovations* is considered one of the most important marketing concepts of the last century.  In it, he described a Technology Adoption Lifecycle that shows how new ideas spread through an environment, following predictable patterns and categories of users.
 
 ![]({static}diffusion_of_innovations.png)
 
