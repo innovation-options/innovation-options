@@ -20,6 +20,7 @@ Good Luck!
 
 ---
 
+
 I've worked with hundreds of corporate innovators, and they are just as smart, committed and capable as any lone entrepreneur working out of his garage.  But we really are putting them in an impossible position: finance is expecting reliable predictions despite massive uncertainty and will mark progress accordingly.  If they hit their numbers, they get a pat on the back for doing their job, yet still far from the payout the entrepreneur sees — but if they miss they are considered unreliable and best, and, if the disaster is big enough, they might lose their job — all because they had this great idea.
 
 And when you think of it this way, it's amazing corporate innovation happens at all.
