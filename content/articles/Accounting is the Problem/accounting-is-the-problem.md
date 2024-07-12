@@ -1,5 +1,5 @@
 Title: Accounting is the Problem
-Date: 2022-12-31
+Date: 2024-06-23
 Slug: accounting-is-the-problem
 Category: learn
 Status: published
