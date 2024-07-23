@@ -36,7 +36,7 @@ function calculateOption() {
 
   // For the purposes of this tool the following sigma value buckets
   // are necessarily lossy.  More properly, sigma needs to be calculated
-  // by industry, but this is close enough for exposition and frankly
+  // by industry, but this is close enough for demonstration and frankly
   // it took a lot of effort to calculate the actual sigmas so I'm
   // going to keep them proprietary for the time being.
   const sigmaMap = {
