@@ -1,76 +1,81 @@
+// I'm a self-taught programmer; be gentle...
+
 const { log, sqrt, exp, pow, max, floor } = Math;
 
 function calculateOption() {
+  // Get the variables user input
   let strike = document.getElementById("strike").value;
-  let offsetChoice = document.getElementById("offset").value;
   let termChoice = document.getElementById("term").value;
   let sigmaChoice = document.getElementById("sigma").value;
 
+  // A constant; should be adjusted as necessary.
   let riskFree = 0.05;
 
-  const offsetMap = {
-    'Weekly': 52,
-    'Bi-Weekly': 24,
-    'Monthly': 12,
-    'Bi-Monthly': 6,
-    'Quarterly': 4,
-    'Semi-Annually': 2,
-    'Annually': 1,
-  };
-
+  // Turn the term input into a float measured in years
   const termMap = {
+    'One Week': 0.019,
+    'One Fortnight': 0.038,
     'One Month': 0.083,
     'One Quarter': 0.25,
     'Six Months': 0.50,
     'One Year': 1.0,
-    'Year and a Half': 1.50,
     'Two Year': 2.0,
-    'Four Year': 4.0,
   };
 
+  // Could have used tuples in the above, but for clarity
+  // turn the term input into an integer for number of iterations.
+  const iterationsMap = {
+    'One Week': 5, // Daily
+    'One Fortnight': 4, // Semi-Weekly
+    'One Month': 4, // Weekly
+    'One Quarter': 6, // Semi-Monthly
+    'Six Months': 6, // Monthly
+    'One Year': 4, // Quarterly
+    'Two Year': 4, // Semi-Annually
+  };
+
+  // For the purposes of this tool the following sigma value buckets
+  // are necessarily lossy.  More properly, sigma needs to be calculated
+  // by industry, but this is close enough for demonstration and frankly
+  // it took a lot of effort to calculate the actual sigmas so I'm
+  // going to keep them proprietary for the time being.
   const sigmaMap = {
     'Very Low': 0.25,
     'Low': 0.5,
     'Moderate': .75,
-    'High': 1,
+    'High': 1.0,
     'Very High': 1.5,
   };
 
-  let offset = offsetMap[offsetChoice];
+  // Set the variables
   let term = termMap[termChoice];
+  let iterations = iterationsMap[termChoice];
   let sigma = sigmaMap[sigmaChoice];
 
-
-  function getIterations(offset, term) {
-    return floor(offset * term);
-  };
-
-  let iterations = getIterations(offset, term);
-
+  // Calculate DeltaT in terms of years.
   function getDeltaT(term, iterations) {
     return term / iterations;
   }
-
   let deltaT = getDeltaT(term, iterations);
 
+  // Calculate the up, down and flat factors per
+  // the trinomial formula
   function getUpFactor(sigma, deltaT) {
     return exp(sigma * sqrt(2*deltaT));
   }
-
   let upFactor = getUpFactor(sigma, deltaT);
 
   function getDownFactor(upFactor) {
     return 1 / upFactor;
   }
-
   let downFactor = getDownFactor(upFactor);
 
   function getFlatFactor() {
     return 1;
   }
-
   let flatFactor = getFlatFactor();
 
+  // Calculate the corresponding probabilities
   function getUpProb(deltaT, sigma, riskFree) {
     return pow(
       (
@@ -84,7 +89,6 @@ function calculateOption() {
       2
     );
   }
-
   let upProb = getUpProb(deltaT, sigma, riskFree);
 
   function getDownProb(sigma, deltaT, riskFree) {
@@ -100,15 +104,14 @@ function calculateOption() {
       2
     );
   }
-
   let downProb = getDownProb(sigma, deltaT, riskFree);
 
   function getFlatProb(upProb, downProb) {
     return 1 - (upProb + downProb)
   }
-
   let flatProb = getFlatProb(upProb, downProb);
 
+  // Step one: generate the recombining matrix of spot values
   function getSpotTree(iterations, strike, upFactor) {
     let v = {};
     let i = -iterations;
@@ -118,9 +121,9 @@ function calculateOption() {
     }
     return v;
   }
-
   let spotTree = getSpotTree(iterations, strike, upFactor);
 
+  // Step two: find the terminal value at expiration
   function getTermValue(spotTree, iterations, strike) {
     let p = {};
     let v = spotTree;
@@ -131,9 +134,9 @@ function calculateOption() {
     }
     return p;
   }
-
   let termValue = getTermValue(spotTree, iterations, strike);
 
+  // Step three: find the discounted value at each node of the matrix..
   function getValueTree(termValue, iterations, riskFree, deltaT, upProb, downProb, flatProb) {
     let v = {};
     let p = termValue;
@@ -152,15 +155,21 @@ function calculateOption() {
     }
     return v;
   }
-
   let valueTree = getValueTree(termValue, iterations, riskFree, deltaT, upProb, downProb, flatProb);
 
+  // Return the value at time zero (ie, the premium.)
   function getPremium(valueTree) {
     return valueTree[0][0];
   }
-
   let premium = getPremium(valueTree);
 
+  // Set the precision based on the premium
+  let precision = 1;
+  if (premium < 1) {
+    precision = 2;
+  }
+
+  // Prepare the entire valuation tree for rendering.
   function getValueArray(valueTree) {
     let a = [];
     let i = iterations;
@@ -181,7 +190,6 @@ function calculateOption() {
     }
     return a;
   }
-
   let valueArray = getValueArray(valueTree);
 
   function createHead(valueArray) {
@@ -201,7 +209,7 @@ function calculateOption() {
       subArray.sort((a, b) => b.moves - a.moves);
       let inner = '';
       for (let j = 0; j < subArray.length; j++) {
-        let datum = subArray[j]['value'].toFixed(1).toString();
+        let datum = subArray[j]['value'].toFixed(precision).toString();
         inner += `${datum}<br>`
       };
       output += `<td class='align-middle'>${inner}</td>`;
@@ -218,7 +226,8 @@ function calculateOption() {
     `;
   }
 
-  document.getElementById('premium').innerHTML = `The Premium for this Option is: ${premium.toFixed(1)}`;
+  // Render it!
+  document.getElementById('premium').innerHTML = `The Premium for this Option is: ${premium.toFixed(precision)}`;
   document.getElementById("valuation-tree").innerHTML = createTable(valueArray);
   document.getElementById("tree-title").innerHTML = "Pre-Money Valuation Tree";
 
