@@ -7,9 +7,9 @@ Summary: Everett Rogers's Diffusion of Innovation is one of the most important m
 
 Everett Rogers's 1962 work *Diffusion of Innovations* is considered one of the most important marketing concepts of the last century.  In it, he described a Technology Adoption Lifecycle that shows how new ideas spread through an environment, following predictable patterns and categories of users.
 
-![]({static}diffusion_of_innovations.png)
+![][image-1]
 
-The blue curve itself is a normal distribution of new adopters;  things start slow, speed up as the concept takes root, and then slow down as a function of market saturation.  The yellow curve is the cumulative distrbution of that same curve, showing market penetration of the new idea.  Rodgers grouped the distribution into buckets based on standard deviations from the mean, and categorized these into five district groups based on their adoption motivations.
+The blue curve itself is a normal distribution of new adopters;  things start slow, speed up as the concept takes root, and then slow down as a function of market saturation.  The yellow curve is the cumulative distribution of that same curve, showing market penetration of the new idea.  Rodgers grouped the distribution into buckets based on standard deviations from the mean, and categorized these into five district groups based on their adoption motivations.
 
 Specifically, the five groups (in order) were:
 
@@ -25,18 +25,18 @@ Early Adopters are next in line.  They are the 13.5% willing to be among the fir
 
 The Early Majority is first large bucket at roughly 34% of the total who like the Early Adopters also have a problem to solve, but differ in that they will only try new products if they see other people are using them (social proof).
 
-The Late Majority is the next large bucket at roughly a third, but as opposed to the Early Majorty are not seeking specifically to solve a problem but instead adopt because everyone else is already using the product and don’t want to be left out.
+The Late Majority is the next large bucket at roughly a third, but as opposed to the Early Majority are not seeking specifically to solve a problem but instead adopt because everyone else is already using the product and don’t want to be left out.
 
-Laggards neither have a need nor care about others; they adopt soley because they are forced to as the new product offered is now the only product available, and are the remaining 16% of the market.  In this way they share the same characteristics as the first-adopting Innovators, although they themselves are the last-adopting.
+Laggards neither have a need nor care about others; they adopt solely because they are forced to as the new product offered is now the only product available, and are the remaining 16% of the market.  In this way they share the same characteristics as the first-adopting Innovators, although they themselves are the last-adopting.
 
 Thus described, we can place the segments in a 2x2 matrix where the horizontal axis describes whether or not a product solves a perceived problem and the vertical axis describes whether others are already using the product.  The arrows shows the overall market adoption path.
 
-![]({static}diffusion_matrix.png)
+![][image-2]
 
 ## The Cohorts in Depth
 
 ### Innovators
-The Innovators come for free.  They’re always on the lookout for the “Next Big Thing” and are eager to find your new product.  Innovators are are a great way to shake out initial bugs and defects, but their enthusiasm is not indicative of any greater trend.  They the smallest cohort and once the newness of your product dies off they lose interest in favor of the next “Next Big Thing”.    Innovators don’t care about whether or not you’re solving a problem and don't care or even want to see anyone else using it; in fact, being on the bleeding edge is the point.  For Innovators, it’s the newness that matters.
+The Innovators come for free.  They’re always on the lookout for the “Next Big Thing” and are eager to find your new product.  Innovators are a great way to shake out initial bugs and defects, but their enthusiasm is not indicative of any greater trend.  They the smallest cohort and once the newness of your product dies off they lose interest in favor of the next “Next Big Thing”.    Innovators don’t care about whether or not you’re solving a problem and don't care or even want to see anyone else using it; in fact, being on the bleeding edge is the point.  For Innovators, it’s the newness that matters.
 
 Some outbound marketing is of course required at this stage; since there are no users the only way people can find out about the product is if the company tells them about it.  However, Innovators are actively seeking out new products at this stage, and so your efforts here should be absolutely minimal.  As long as you're not actively trying to hide your idea, Innovators will find it.
 
@@ -101,3 +101,6 @@ This is actually represented by its own transition, called "Idea/Company Fit".  
 
 ## Summary
 The Rogers Technology Adoption Lifecyle provides a useful set of characteristics for entrepreuners introducting new products to new markets.  The intersection of problem-solving/social-usage at each stage of the Innovators, Early Adopters, Early Majority, Late Majority and Laggards gives critical insight to what the customer priorities are at any given point in time.  This in combination with the concepts of Problem/Solution, Product/Market, Market/Profit and Idea/Company fit as the key transition metrics provides the high-level strategic guidance to successfully bring your idea through the entire lifecycle successfully.
+
+[image-1]:	%7Bstatic%7Ddiffusion_of_innovations.png
+[image-2]:	%7Bstatic%7Ddiffusion_matrix.png

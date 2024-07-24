@@ -10,15 +10,15 @@ To help illustrate this, let's use an example filled with uncertainty: oil explo
 
 Now, let's simplify rig choices into two main classes: one is a production-ready rig. These are designed to extract large amounts of oil and put them into the pipeline. They’re immensely expensive to build, setup and maintain. The second class is a "wildcat" rig. These are small, less expensive, and are designed not to extract huge amounts but simply to test for the presence of oil. 
 
-![]({static}big-rig.png)
+![][image-1]
 
 Both of these rigs drill holes and pump oil, but the purposes for them are very different. For the first rig, success or failure is dictated by whether or not you find oil. If there isn't any oil, then the project is considered a huge failure because of the cost and purpose of the rig. For the wildcat, the goal is simply to answer the question so that you can make an informed choice. If it doesn't hit oil that's still a success -- the cost of placing a huge rig that won't return is avoided, and those resources can be used elsewhere.  This is why reserves are always proven before billion-dollar investments are made.
 
-In this way, the wildcat rig represents an option.  It is a cost-effective way to delay the large-rig investment decision until more is know about the actual prescence of oil.  If the wildcat finds oil, great!  Start printing money.  And if it does not, also great!  Send it somewhere else.  In this way, a wildcat that comes up empty is not considered money wasted; quite the contrary, it is an essential component of reducing the risk associated with the unknowns of oil exploration and increases the overall chances of striking it rich.
+In this way, the wildcat rig represents an option.  It is a cost-effective way to delay the large-rig investment decision until more is know about the actual presence of oil.  If the wildcat finds oil, great!  Start printing money.  And if it does not, also great!  Send it somewhere else.  In this way, a wildcat that comes up empty is not considered money wasted; quite the contrary, it is an essential component of reducing the risk associated with the unknowns of oil exploration and increases the overall chances of striking it rich.
 
-![]({static}wildcat.png)
+![][image-2]
 
-But the wildcat is capable of failure.  For instance, if the wildcat says "we drilled but there was no oil here" but they didn't drill deeply enough and missed the oil just a hundred feet away, that would be a false negative failure for missing the patch.  Similiarly, if they say "we struck oil" but it turns out to be natural gas, then that would be a false positive as the big-rig is built only to be unable to produce returns.  In other words, it isn't the presence or absence of oil that matters to the value of the wildcatting operation -- only the accuracy of the decision itself matters.
+But the wildcat is capable of failure.  For instance, if the wildcat says "we drilled but there was no oil here" but they didn't drill deeply enough and missed the oil just a hundred feet away, that would be a false negative failure for missing the patch.  Similarly, if they say "we struck oil" but it turns out to be natural gas, then that would be a false positive as the big-rig is built only to be unable to produce returns.  In other words, it isn't the presence or absence of oil that matters to the value of the wildcatting operation -- only the accuracy of the decision itself matters.
 
 ---
 
@@ -45,3 +45,6 @@ The second metric, accuracy, is measured by the veracity of the information you 
 Again, in practice this can be difficult, as least for the second scenario.  In the Positive case, unless there are seismic shifts -- literally -- then the big rig will either be able to pump the oil the wildcatter found or it will not, in which the determination was inaccurate.  In the Negative case, it isn't always obvious whether or not the oil was just a few feet beyond where the wildcat bored its hole.  In this case, some one else must find oil in the same location at some future date, in which case the decision not to place a big rig was inaccurate.  And while a False Positive decision might cost the company profitability, a False Negative can kill -- just ask the executives from Kodak who felt that digital photography would never succeed.
 
 With that, you can now orient your early-stage innovation metrics around the speed and accuracy of your market testing.  Keeping a close eye on these KPIs, and not on phantom projections of ROI, are the key to managing a successful innovation project.
+
+[image-1]:	%7Bstatic%7Dbig-rig.png
+[image-2]:	%7Bstatic%7Dwildcat.png

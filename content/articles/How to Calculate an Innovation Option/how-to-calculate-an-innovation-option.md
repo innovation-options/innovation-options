@@ -10,13 +10,13 @@ In this article, I’ll detail how to calculate the ROI of an Innovation Option 
 
 ### The Trinomial Model
 
-The [Trinomial](https://en.wikipedia.org/wiki/Trinomial_tree) is an option-pricing model developed by [Phelim Boyle](https://en.wikipedia.org/wiki/Phelim_Boyle) in 1986.  It is the most-common method to value American-style options (as opposed to the more widely-known [Black-Scholes Model](https://en.wikipedia.org/wiki/Black–Scholes_model) used primarily for European-style options).  The Trinomial Model has three steps.
+The [Trinomial][1] is an option-pricing model developed by [Phelim Boyle][2] in 1986.  It is the most-common method to value American-style options (as opposed to the more widely-known [Black-Scholes Model][3] used primarily for European-style options).  The Trinomial Model has three steps.
 
 #### Step One: Build Range of Future Values
 
 Step one constructs a range of possible future values for an opportunity from a given starting point. Think of it like a storm tracker; from the current position of the storm, the potential path expands into a cone across the possible area of impact. The further in the future, the greater the size of the cone. That’s what happens in step one: from a known starting point, the range of values branches out over the life of the option. It could appreciate greatly and always be headed “up and to the right”. Or it could be a complete disaster, always losing value. Or it could go up, then down, then up, then flat -- anywhere in between the best and worst case.
 
-![]({static}lattice.png)
+![][image-1]
 
 This range is called a “lattice”, or a series of connected nodes that looks like a sideways branching tree. Mathematically the lattice is constructed by applying these equations to each node in sequence, starting with the initial value:
 
@@ -28,17 +28,17 @@ The components of these equations are the constant $e$, the duration of the time
 
 With the factors determined, you build the lattice by taking your starting point $S_0$ (called the Spot) and multiplying it by the $u$, $d$ and $m$ factors.
 
-![]({static}equations_step_one.png)
+![][image-2]
 
 Then, those three results are themselves multiplied by $u$, $d$ and $m$, creating still more nodes.
 
-![]({static}equations_step_two.png)
+![][image-3]
 
 This continues for a given number of steps until the option’s term (the period within which it must be exercised) expires.
 
 An interesting feature to note is that the $u$ and $d$ factors are reciprocals of one another. This means that going up in one step and then down in the next results in the same value as if you went down and then up.
 
-![]({static}recipricol.png)
+![][image-4]
 
 In fact, any combination of up/down/flat moves results in the same possible future value. This is called a recombining matrix, making the trinomial method fairly easy to visualize and calculate.
 
@@ -54,7 +54,7 @@ $$Max[S_n-K, 0]$$
 
 Simply apply that to every possible expected value at expiry, and you have the total range of terminal values at option expiry.
 
-![]({static}max_equation_applied.png)
+![][image-5]
 
 #### Step Three: Calculate the Discounted Expected Values
 
@@ -69,11 +69,11 @@ $$p_d = \left(\frac{e^{\sigma\sqrt {\Delta t/2}}-e^{(r - q)  \Delta t / 2}}{e^{\
 
 The equations here are the most complex, but in plain English they say, “multiply the terminal values by their expected value, and sum those results taking into account the time value of money at the risk-free rate $r$ less any possible dividend-yield $q$.”
 
-![]({static}return_equations_applied.png)
+![][image-6]
 
 Continue calculating backward column by column, node by node, through the entire lattice.  Repeating this process back to time zero results in a single number that represents the value of the option today.
 
-![]({static}final_value.png)
+![][image-7]
 
 
 Thus, in contrast to a traditional project where value is determined from a single estimated future outcome, an option considers many different future outcomes, calculates their relative probability, and sums together their discounted expected values to get the current value.
@@ -88,7 +88,7 @@ Now that we have a general understanding of how the Trinomial Model is construct
 *   The dividend-yield rate ($q$), or the expected dividends during the option period divided by the spot price of the underlying investment.
 *   The strike $K$, which is the agreed-upon future price at which the option would be exercised.
 *   The spot $S$, which is the market price of the underlying instrument at any given time, and is used as the value of the initial node $S_0$ at time zero.
-*   The time period $\Delta{t}$, which is the annualized period of time until expiry divided by the number of iterations.  In our example above, the number of iterations is four ($S_0$ -> $S_4)$, and if we assume the duration to be one year then the $\Delta{t}$ is one fourth of one, or .25.
+*   The time period $\Delta{t}$, which is the annualized period of time until expiry divided by the number of iterations.  In our example above, the number of iterations is four ($S_0$ -\> $S_4)$, and if we assume the duration to be one year then the $\Delta{t}$ is one fourth of one, or .25.
 *   The sigma ($\sigma$) is the standard deviation of the log-returns for historical prices of the underlying instrument, and is a measure of overall volatility.  It is calculated through the following equation, for time periods $T$ and spot price $X$.
 
 $${\sigma} = \sqrt{\frac{1}{T}\sum_{t=1}^T \left(\ln(X_{t}) - \ln(X_{t-1})\right)^2}$$
@@ -107,9 +107,9 @@ Next we address the Strike $K$.  This is the agreed-upon price for the future in
 
 Next, we need to determine a Spot value $S_0$. Normally we’d use the stock quote for the underlying instrument as the spot, but obviously there is no such quote available for innovation projects. However, we do know that if the option were exercised it would receive the Strike as cash.  Further, if we then immediately returned that cash upon exercise, the ultimate return would be zero since there will be no other opportunities to create any additional value. Thus, for our option we are able to approximate the Spot by making it equivalent to the Strike, or $S_0 = K$.
 
-Next, we must determine $\Delta{t}$, which itself is comprised of the total time $T$ and number of iterations $i$.  To determine $T$, simply guage the duration of the research period and set it to that period in years.  The number of iterations $i$ can be arbitrary, but in an innovation context should correspond roughly to the number of trials expected during the research period $T$.  This makes the time period the duration divided by the iterations, or $\Delta{t}={i}/{T}$.  For example, a one year option that expected to release trial products quarterly would have a $T$ of $1$ and an $i$ of $4$, resulting in a $\Delta{t}$ of $.25$.
+Next, we must determine $\Delta{t}$, which itself is comprised of the total time $T$ and number of iterations $i$.  To determine $T$, simply gauge the duration of the research period and set it to that period in years.  The number of iterations $i$ can be arbitrary, but in an innovation context should correspond roughly to the number of trials expected during the research period $T$.  This makes the time period the duration divided by the iterations, or $\Delta{t}={i}/{T}$.  For example, a one year option that expected to release trial products quarterly would have a $T$ of $1$ and an $i$ of $4$, resulting in a $\Delta{t}$ of $.25$.
 
-Finally, we consider the $\sigma$.  As with the Spot, we'd normally use stock quotes over time to determine the volatilty of the underlying instrument; no such quotes are available for our innovation projects.  However, we do have an analogue in the form of post-money valuations for ventures in similar industries.  For example, if we were to aggregate the various Series A investments in Artificial Intelligence we would arrive at an implied volatility that can serve as a reasonable approximation for the actual $\sigma$ for an innovation project focused on AI.  Given that Series A investments have natural bounds both in terms of amount and valuation that tend to cluster to a central mean, the resulting $\sigma$ tends to reflect their corresponding industries with remarkable precision.  Whether or not this is mathmatical proof of the fabled "herd mentality" of venture capitalists I leave for others to decide...
+Finally, we consider the $\sigma$.  As with the Spot, we'd normally use stock quotes over time to determine the volatility of the underlying instrument; no such quotes are available for our innovation projects.  However, we do have an analogue in the form of post-money valuations for ventures in similar industries.  For example, if we were to aggregate the various Series A investments in Artificial Intelligence we would arrive at an implied volatility that can serve as a reasonable approximation for the actual $\sigma$ for an innovation project focused on AI.  Given that Series A investments have natural bounds both in terms of amount and valuation that tend to cluster to a central mean, the resulting $\sigma$ tends to reflect their corresponding industries with remarkable precision.  Whether or not this is mathematical proof of the fabled "herd mentality" of venture capitalists I leave for others to decide...
 
 I've calculated the $\sigma$ for various investment areas that you can use in  your own innovation options, which I keep updated and you can find here.  Alternatively, firms with a history of investing in innovation projects can use their own internal valuation benchmarks for greater relevance and precision. Simply find previously funded projects similar in scope and concept to the idea being considered, and use their original business plan valuations to create the boundary range. Note that you should consider all projects that were approved and funded -- not solely the ones that were successful -- to provide the complete picture of the value these ideas command within the firm.
 
@@ -145,3 +145,15 @@ In general, the way to address these limitations is to be as honest as possible 
 ### Summary
 
 Options are necessarily more complex than traditional investments. While the former must consider a range of possibility the latter only has one reality to manage. Still, when facing uncertain markets the option approach is the superior choice. It changes our valuation process from divination to discovery. If we decide to exercise the option and pursue the opportunity, then we can have confidence that evidence and not supposition drove that decision. And, if the eventual conclusion is that the option should not be exercised it has still served its purpose; we can put scarce resources to better, more productive use. Either way, we do not have to make our most critical decision at the precise moment we have the least amount of information. Instead, we can value our discovery efforts by demonstrating the Return on Investment from the perspective of the optionality those efforts represent.
+
+[1]:	https://en.wikipedia.org/wiki/Trinomial_tree
+[2]:	https://en.wikipedia.org/wiki/Phelim_Boyle
+[3]:	https://en.wikipedia.org/wiki/Black%E2%80%93Scholes_model
+
+[image-1]:	%7Bstatic%7Dlattice.png
+[image-2]:	%7Bstatic%7Dequations_step_one.png
+[image-3]:	%7Bstatic%7Dequations_step_two.png
+[image-4]:	%7Bstatic%7Drecipricol.png
+[image-5]:	%7Bstatic%7Dmax_equation_applied.png
+[image-6]:	%7Bstatic%7Dreturn_equations_applied.png
+[image-7]:	%7Bstatic%7Dfinal_value.png
