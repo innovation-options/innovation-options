@@ -1,5 +1,5 @@
 Title: Measuring Learning in Dollars
-Date: 2024-01-01
+Date: 2020-01-14
 Slug: measuring-learning
 Category: learn
 Status: published
@@ -112,13 +112,13 @@ Sometimes things go _really_ poorly. Let’s say this time John goes through the
 The Innovation Option model measures **_learning_** (what your early-stage Product team should be doing) in **_dollars_** (what your Finance team needs for effective corporate governance.) It provides a simple, easy to implement approach that minimally disrupts existing workflows. And it doesn’t simply mitigate risk, it reduces it through iteration. Firms seeking to innovate faster with better results and less risk should make Innovation Options the first step in their new-product initiatives.
 
 
-[image-1]:	%7Bstatic%7Dits_a_trap.gif
-[image-2]:	%7Bstatic%7Dvalues_pricing_tree.png
-[image-3]:	%7Bstatic%7Dstep_zero_pricing_tree.png
-[image-4]:	%7Bstatic%7Dstep_one_up_pricing_tree.png
-[image-5]:	%7Bstatic%7Dup_flat_tree.png
-[image-6]:	%7Bstatic%7Dup_flat_up_tree.png
-[image-7]:	%7Bstatic%7Dup_flat_up_flat_tree.png
-[image-8]:	%7Bstatic%7Dgood_path.png
-[image-9]:	%7Bstatic%7Dbad_path.png
-[image-10]:	%7Bstatic%7Dugly_path.png
+[image-1]:	{static}its_a_trap.gif
+[image-2]:	{static}values_pricing_tree.png
+[image-3]:	{static}step_zero_pricing_tree.png
+[image-4]:	{static}step_one_up_pricing_tree.png
+[image-5]:	{static}up_flat_tree.png
+[image-6]:	{static}up_flat_up_tree.png
+[image-7]:	{static}up_flat_up_flat_tree.png
+[image-8]:	{static}good_path.png
+[image-9]:	{static}bad_path.png
+[image-10]:	{static}ugly_path.png

@@ -1,5 +1,5 @@
 Title: Option Characteristics
-Date: 2024-03-06
+Date: 2020-01-12
 Slug: option-characteristics
 Category: learn
 Status: published

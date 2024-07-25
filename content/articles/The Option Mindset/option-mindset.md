@@ -1,5 +1,5 @@
 Title: The Option Mindset
-Date: 2024-06-22
+Date: 2020-01-02
 Status: Published
 Category: Learn
 Slug: option-mindset

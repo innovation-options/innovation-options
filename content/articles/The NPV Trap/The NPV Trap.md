@@ -1,5 +1,5 @@
 Title: The NPV Trap
-Date: 2024-06-24
+Date: 2020-01-11
 Slug: the-npv-trap
 Category: learn
 Status: published

@@ -1,7 +1,7 @@
 Title: Laddered Innovation
 Slug: laddered-innovation
 Status: published
-Date: 2024-01-10
+Date: 2020-01-09
 Summary: Building a staggered portfolio of options.
 Category: learn
 
@@ -30,5 +30,5 @@ Such a staggered approach reduces the risk associated with the uncertainty of th
 
 As William Gibson famously stated, "the future is already here -- it just isn't evenly distributed".  The laddered innovation portfolio reduces the risk associated with market timing, and allows for the company to be around when that distribution occurs.
 
-[image-1]:	%7Bstatic%7Drung.png
-[image-2]:	%7Bstatic%7Dportfolio.png
+[image-1]:	{static}rung.png
+[image-2]:	{static}portfolio.png

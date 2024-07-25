@@ -1,5 +1,5 @@
 Title: What's Your WOM/PROM Score?
-Date: 2024-01-07
+Date: 2020-01-07
 Slug: wom-prom-score
 Summary: Measuring Product/Market Fit.
 Category: learn
@@ -100,10 +100,10 @@ The WPS is an essential metric for any product under discontinuous innovation.
 [1]:	https://en.wikipedia.org/wiki/Product/market_fit
 [2]:	https://en.wikipedia.org/wiki/Bass_diffusion_model
 
-[image-1]:	%7Bstatic%7Dtwo_curves.png
-[image-2]:	%7Bstatic%7Dbaseline.png
-[image-3]:	%7Bstatic%7Ddelta_prom.png
-[image-4]:	%7Bstatic%7Ddelta_wom.png
-[image-5]:	%7Bstatic%7Dwhich_is_which.png
-[image-6]:	%7Bstatic%7Dtipping_point.png
-[image-7]:	%7Bstatic%7Dadoption_cohort.png
+[image-1]:	{static}two_curves.png
+[image-2]:	{static}baseline.png
+[image-3]:	{static}delta_prom.png
+[image-4]:	{static}delta_wom.png
+[image-5]:	{static}which_is_which.png
+[image-6]:	{static}tipping_point.png
+[image-7]:	{static}adoption_cohort.png
