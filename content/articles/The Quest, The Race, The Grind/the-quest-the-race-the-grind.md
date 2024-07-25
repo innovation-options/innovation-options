@@ -1,7 +1,7 @@
 Title: The Quest, The Race, The Grind
 Date: 2024-01-09
 Summary: Understanding the Three Horizons of Growth
-Category: more
+Category: learn
 
 ![]({static}athena.png)
 

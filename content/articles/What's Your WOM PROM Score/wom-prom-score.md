@@ -2,7 +2,7 @@ Title: What's Your WOM/PROM Score?
 Date: 2024-01-07
 Slug: wom-prom-score
 Summary: Measuring Product/Market Fit.
-Category: more
+Category: learn
 
 The critical question any pre-growth innovator faces is: **when do I step on the gas?**
 

@@ -1,7 +1,7 @@
 Title: The Innovation Engine
 Date: 2024-01-08
 Summary: Using machine-learning principles to systematize innovation
-Category: more
+Category: learn
 
 On a recent client site-visit I noticed a wall on which were written 100 potential business ideas. Rising fifteen feet off the ground, the list represented wide-ranging opportunity and enormous potential value. Curious, I asked about the progress on each of them, learning that only two were being pursued--the rest languishing as mere words on a wall.
 
