@@ -7,7 +7,7 @@ Summary: Everett Rogers's Diffusion of Innovation is one of the most important m
 
 Everett Rogers's 1962 work *Diffusion of Innovations* is considered one of the most important marketing concepts of the last century.  In it, he described a Technology Adoption Lifecycle that shows how new ideas spread through an environment, following predictable patterns and categories of users.
 
-![]({static}diffusion_of_innovations.png)
+![][image-1]
 
 The blue curve itself is a normal distribution of new adopters;  things start slow, speed up as the concept takes root, and then slow down as a function of market saturation.  The yellow curve is the cumulative distribution of that same curve, showing market penetration of the new idea.  Rodgers grouped the distribution into buckets based on standard deviations from the mean, and categorized these into five district groups based on their adoption motivations.
 
@@ -31,7 +31,7 @@ Laggards neither have a need nor care about others; they adopt solely because th
 
 Thus described, we can place the segments in a 2x2 matrix where the horizontal axis describes whether or not a product solves a perceived problem and the vertical axis describes whether others are already using the product.  The arrows shows the overall market adoption path.
 
-![]({static}diffusion_matrix.png)
+![][image-2]
 
 ## The Cohorts in Depth
 
@@ -82,15 +82,15 @@ The Early Majority, in contrast, is a mass-market opportunity demanding a fundin
 Thus, your goal at this stage must be demonstrate that your product actually solves a problem in a way that promotes conspicuous usage.  Once this is accomplished, you can ride the hockey stick of growth straight into the Late Majority.
 
 ### Late Majority
-When we reach Late Majority the product has diffused through more than half the population. Here the original problem is now considered solved by your product and is therefore irrelvant as a decision criterion; instead, the main worry for adopters is being left out.  For the Late Majority, the only thing that matters is that everyone else is using it.  The Late Majority is equal in size to the Early Majority and remains squarely within the realm of mass marketing.
+When we reach Late Majority the product has diffused through more than half the population. Here the original problem is now considered solved by your product and is therefore irrelevant as a decision criterion; instead, the main worry for adopters is being left out.  For the Late Majority, the only thing that matters is that everyone else is using it.  The Late Majority is equal in size to the Early Majority and remains squarely within the realm of mass marketing.
 
 Here, the growth engine is well-operating and has been for some time.  The main difference between the Early and Late majority is that the latter, while still growing, is growing at a slower rate (for the calculus geeks, the second derivative has turned negative.)
 
 There is still more than half the market remaining and so growth must be maintained, but at this point a profit model to match the growth model must be clearly established to justify the investments made to date.  To be clear, profits themselves may be forestalled in furtherance of a strategic objective.  For instance, Amazon is a famous example of a firm that priorities growth above profit whenever possible so as not to stunt the strategic positioning which that growth provides.  Still, at some point every business must become profitable, and this final transition represents the prioritization of profit over growth.
 
-This transition is called "Market/Profit Fit", and it essentially means that you have demonstrated the ability to sufficiently monetize the value created up to this point into the cash necessary to sustain your business.  Again, this may seem self-evident, but the most high-profile business disasters when there are collosal sums spent to spur and support growth which never produce a return on that investment.  The decision to actually transition to profit-focus is ultimately a strategic one, but every enterprise must have clear evidence of eventual profitability well before entering the late-majority.
+This transition is called "Market/Profit Fit", and it essentially means that you have demonstrated the ability to sufficiently monetize the value created up to this point into the cash necessary to sustain your business.  Again, this may seem self-evident, but the most high-profile business disasters when there are colossal sums spent to spur and support growth which never produce a return on that investment.  The decision to actually transition to profit-focus is ultimately a strategic one, but every enterprise must have clear evidence of eventual profitability well before entering the late-majority.
 
-That's because like the transition between early-adopter to early-majority, this transition is permanent:  firms that no longer have the opportunity for hyper-growth can not secure speculative funding.  Any financing must come from free cash flow or sources which demand an immediate return.  This is no longer about betting on the future; it’s about harvesting the present.  Yes, we continue to grow while in the early majority, but this growth is no longer the leaps and bounds of new market potential, but rather the growth of the overall population, or due to securing market share from competitors.  In either case, profit is the final stage and we can no longer tolerate losing money.  Lack of performance leads to cost-cutting, layoffs or, in the final analysis, end-of-life for the products or the firm.
+That's because like the transition between early-adopter to early-majority, this transition is permanent:  firms that no longer have the opportunity for hyper-growth can no longer secure speculative funding.  Any financing must come from free cash flow or sources which demand an immediate return.  This is no longer about betting on the future; it’s about harvesting the present.  Yes, we continue to grow while in the early majority, but this growth is no longer the leaps and bounds of new market potential, but rather the growth of the overall population, or due to securing market share from competitors.  In either case, profit is the final stage and we can no longer tolerate losing money.  Lack of performance leads to cost-cutting, layoffs or, in the final analysis, end-of-life for the products or the firm.
 
 ### Laggards
 The Laggards are the final segment who are basically forced to adopt because there is no alternative.  They don’t care about solving a problem, but since literally everyone else is already using the product, substitutes are no longer easily available.  Laggards care about neither problems nor usage, and so they ironically share the same quadrant as the Innovators.
@@ -100,7 +100,7 @@ Laggards are notable not for their characteristics but for what they represent; 
 This is actually represented by its own transition, called "Idea/Company Fit".  Put simply, it means that the idea proposed for rejuvenating the product line through the next innovation matches the companies strengths, skills, and strategy.  Most of the time this consideration is so self-evident that it is never formally considered; still, it's worth spending at least a short period of time ensuring that the next endeavor is worthwhile at all.  Perhaps there is a larger change of strategy or some other in the works that suggest no additional investment in an aging product line.  Regardless, take the brief amount of time required to consider the strategic implications of the next innovation -- formally or informally -- is the best way to close the loop on the technology adoption lifecycle.
 
 ## Summary
-The Rogers Technology Adoption Lifecyle provides a useful set of characteristics for entrepreuners introducting new products to new markets.  The intersection of problem-solving/social-usage at each stage of the Innovators, Early Adopters, Early Majority, Late Majority and Laggards gives critical insight to what the customer priorities are at any given point in time.  This in combination with the concepts of Problem/Solution, Product/Market, Market/Profit and Idea/Company fit as the key transition metrics provides the high-level strategic guidance to successfully bring your idea through the entire lifecycle successfully.
+The Rogers Technology Adoption Lifecycle provides a useful set of characteristics for entrepreneurs introducing new products to new markets.  The intersection of problem-solving/social-usage at each stage of the Innovators, Early Adopters, Early Majority, Late Majority and Laggards gives critical insight to what the customer priorities are at any given point in time.  This in combination with the concepts of Problem/Solution, Product/Market, Market/Profit and Idea/Company fit as the key transition metrics provides the high-level strategic guidance to successfully bring your idea through the entire lifecycle successfully.
 
 [image-1]:	%7Bstatic%7Ddiffusion_of_innovations.png
 [image-2]:	%7Bstatic%7Ddiffusion_matrix.png
