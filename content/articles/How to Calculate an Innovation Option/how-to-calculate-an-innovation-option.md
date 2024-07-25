@@ -16,7 +16,7 @@ The [Trinomial][1] is an option-pricing model developed by [Phelim Boyle][2] in 
 
 Step one constructs a range of possible future values for an opportunity from a given starting point. Think of it like a storm tracker; from the current position of the storm, the potential path expands into a cone across the possible area of impact. The further in the future, the greater the size of the cone. That’s what happens in step one: from a known starting point, the range of values branches out over the life of the option. It could appreciate greatly and always be headed “up and to the right”. Or it could be a complete disaster, always losing value. Or it could go up, then down, then up, then flat -- anywhere in between the best and worst case.
 
-![][image-1]
+![]({static}lattice.png)
 
 This range is called a “lattice”, or a series of connected nodes that looks like a sideways branching tree. Mathematically the lattice is constructed by applying these equations to each node in sequence, starting with the initial value:
 
@@ -28,17 +28,17 @@ The components of these equations are the constant $e$, the duration of the time
 
 With the factors determined, you build the lattice by taking your starting point $S_0$ (called the Spot) and multiplying it by the $u$, $d$ and $m$ factors.
 
-![][image-2]
+![]({static}equations_step_one.png)
 
 Then, those three results are themselves multiplied by $u$, $d$ and $m$, creating still more nodes.
 
-![][image-3]
+![]({static}equations_step_two.png)
 
 This continues for a given number of steps until the option’s term (the period within which it must be exercised) expires.
 
 An interesting feature to note is that the $u$ and $d$ factors are reciprocals of one another. This means that going up in one step and then down in the next results in the same value as if you went down and then up.
 
-![][image-4]
+![]({static}recipricol.png)
 
 In fact, any combination of up/down/flat moves results in the same possible future value. This is called a recombining matrix, making the trinomial method fairly easy to visualize and calculate.
 
@@ -54,7 +54,7 @@ $$Max[S_n-K, 0]$$
 
 Simply apply that to every possible expected value at expiry, and you have the total range of terminal values at option expiry.
 
-![][image-5]
+![]({static}max_equation_applied.png)
 
 #### Step Three: Calculate the Discounted Expected Values
 
@@ -69,11 +69,11 @@ $$p_d = \left(\frac{e^{\sigma\sqrt {\Delta t/2}}-e^{(r - q)  \Delta t / 2}}{e^{\
 
 The equations here are the most complex, but in plain English they say, “multiply the terminal values by their expected value, and sum those results taking into account the time value of money at the risk-free rate $r$ less any possible dividend-yield $q$.”
 
-![][image-6]
+![]({static}return_equations_applied.png)
 
 Continue calculating backward column by column, node by node, through the entire lattice.  Repeating this process back to time zero results in a single number that represents the value of the option today.
 
-![][image-7]
+![]({static}final_value.png)
 
 
 Thus, in contrast to a traditional project where value is determined from a single estimated future outcome, an option considers many different future outcomes, calculates their relative probability, and sums together their discounted expected values to get the current value.
@@ -146,14 +146,6 @@ In general, the way to address these limitations is to be as honest as possible 
 
 Options are necessarily more complex than traditional investments. While the former must consider a range of possibility the latter only has one reality to manage. Still, when facing uncertain markets the option approach is the superior choice. It changes our valuation process from divination to discovery. If we decide to exercise the option and pursue the opportunity, then we can have confidence that evidence and not supposition drove that decision. And, if the eventual conclusion is that the option should not be exercised it has still served its purpose; we can put scarce resources to better, more productive use. Either way, we do not have to make our most critical decision at the precise moment we have the least amount of information. Instead, we can value our discovery efforts by demonstrating the Return on Investment from the perspective of the optionality those efforts represent.
 
-[1]:	https://en.wikipedia.org/wiki/Trinomial_tree
-[2]:	https://en.wikipedia.org/wiki/Phelim_Boyle
-[3]:	https://en.wikipedia.org/wiki/Black%E2%80%93Scholes_model
-
-[image-1]:	%7Bstatic%7Dlattice.png
-[image-2]:	%7Bstatic%7Dequations_step_one.png
-[image-3]:	%7Bstatic%7Dequations_step_two.png
-[image-4]:	%7Bstatic%7Drecipricol.png
-[image-5]:	%7Bstatic%7Dmax_equation_applied.png
-[image-6]:	%7Bstatic%7Dreturn_equations_applied.png
-[image-7]:	%7Bstatic%7Dfinal_value.png
+[1]:    https://en.wikipedia.org/wiki/Trinomial_tree
+[2]:    https://en.wikipedia.org/wiki/Phelim_Boyle
+[3]:    https://en.wikipedia.org/wiki/Black%E2%80%93Scholes_model

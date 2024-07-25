@@ -7,7 +7,7 @@ Summary: Everett Rogers's Diffusion of Innovation is one of the most important m
 
 Everett Rogers's 1962 work *Diffusion of Innovations* is considered one of the most important marketing concepts of the last century.  In it, he described a Technology Adoption Lifecycle that shows how new ideas spread through an environment, following predictable patterns and categories of users.
 
-![][image-1]
+![]({static}diffusion_of_innovations.png)
 
 The blue curve itself is a normal distribution of new adopters;  things start slow, speed up as the concept takes root, and then slow down as a function of market saturation.  The yellow curve is the cumulative distribution of that same curve, showing market penetration of the new idea.  Rodgers grouped the distribution into buckets based on standard deviations from the mean, and categorized these into five district groups based on their adoption motivations.
 
@@ -31,7 +31,7 @@ Laggards neither have a need nor care about others; they adopt solely because th
 
 Thus described, we can place the segments in a 2x2 matrix where the horizontal axis describes whether or not a product solves a perceived problem and the vertical axis describes whether others are already using the product.  The arrows shows the overall market adoption path.
 
-![][image-2]
+![]({static}diffusion_matrix.png)
 
 ## The Cohorts in Depth
 

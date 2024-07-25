@@ -14,7 +14,7 @@ With the path between success and failure so narrow and the stakes so high it’
 
 The problem is that the flat-part of the hockey stick isn’t truly flat: it’s filled with fits and starts. For example, consider this user adoption chart where the bars indicate current metrics and the dots indicate two possible future trends.
 
-![two curves][image-1]
+![two curves]({static}two_curves.png)
 
 These are the real-world numbers that entrepreneurs see. The overall trend is clearly up-and-to-the-right, but it’s hardly a smooth line. Do we go for it now knowing it might be our only shot at greatness? Or do we wait, risking that others will claim our prize? How can we be sure this is the real thing and not just another false start? It’s a terrifying decision because you can’t know where you are without a frame of reference to the overall curve.
 
@@ -33,19 +33,19 @@ To demonstrate, let’s use the [Bass Diffusion Model][2] to run some what-if an
 
 To set a baseline, consider a Bass curve for a fast-moving innovation where the X-axis is time in years since launch and the Y-axis is market adoption. The legend indicates the time in years to peak sales.
 
-![baseline][image-2]
+![baseline]({static}baseline.png)
 
 In this model we see slow growth for the first 2 years, followed by rapid adoption, with peak sales occurring 4.6 years after introduction after which the growth rate slows until full saturation in ten years.
 
 Now let’s take the same equation and adjust the PROM effectiveness +/- 50% while keeping the WOM constant. The green curve plots what happens when marketing is improved by 50%, and the red curve when marketing is 50% less effective than the baseline. The better/worse time-to-peak-sales is indicated in the graph legend.
 
-![delta prom][image-3]
+![delta prom]({static}delta_prom.png)
 
 As we’d expect, improving our PROM improves adoption with peak sales moving up by six months, while decreasing pushes it out about eight months.
 
 Next, let’s keep the PROM constant while changing the WOM, again by +/- 50% off the base case:
 
-![delta wom][image-4]
+![delta wom]({static}delta_wom.png)
 
 While the degree of change in inputs is the same in both cases, the outcomes are _very_ different. The time to peak sales has improved by more than 16 months in the ‘better’ WOM case, while the ‘worse’ case pushes out peak sales 37 months to 7.7 years.
 
@@ -57,15 +57,15 @@ Now that we can see how the components work, let’s get back to the original qu
 
 Below are two Bass curves with very different adoption cycles. However, I’m only showing the first year of both curves--the “rest of the story” is masked.
 
-![which is which][image-5]
+![which is which]({static}which_is_which.png)
 
 At this point the aggregate graphs are indistinguishable. How can we make a career-defining decision based on so little information? However, if we include the breakdown of user adoption by source--WOM v. PROM--a different picture emerges. Let’s look at the same data that underlie the above graphs, but this time focusing on the WOM/PROM breakdown of each during the first year.
 
-![tipping point][image-6]
+![tipping point]({static}tipping_point.png)
 
 Both charts start at 100% PROM--which is what we’d expect; the first users must come from external efforts since there are no users to provide WOM. However, in the left case the majority of adoption is the result of PROM for that entire first year, while in the right chart the users from WOM increases until it it exceeds PROM around ten months into the year. So let’s now reveal the full curves to see which is which.
 
-![adoption cohort][image-7]
+![adoption cohort]({static}adoption_cohort.png)
 
 In the left case (where WOM is less than PROM), explosive growth is elusive; it’s literally off the chart and so far in the future that you’re out of money before you can reach it. Meanwhile, on the right point at which WOM overtakes PROM (indicated by the arrow) presages the hockey stick by about six months. **The relationship between WOM and PROM provides the reference point we need to predict the shape of the curve.** Both curves looked identical in the aggregate during the first year, but by breaking down WOM/PROM we were able to identify which of the curves needed funding, and which needed more experimentation.
 
@@ -100,10 +100,3 @@ The WPS is an essential metric for any product under discontinous innovation.
 [1]:	https://en.wikipedia.org/wiki/Product/market_fit
 [2]:	https://en.wikipedia.org/wiki/Bass_diffusion_model
 
-[image-1]:	%7Bstatic%7Dtwo_curves.png
-[image-2]:	%7Bstatic%7Dbaseline.png
-[image-3]:	%7Bstatic%7Ddelta_prom.png
-[image-4]:	%7Bstatic%7Ddelta_wom.png
-[image-5]:	%7Bstatic%7Dwhich_is_which.png
-[image-6]:	%7Bstatic%7Dtipping_point.png
-[image-7]:	%7Bstatic%7Dadoption_cohort.png
