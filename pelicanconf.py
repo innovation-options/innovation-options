@@ -74,5 +74,4 @@ DIRECT_TEMPLATES = [
 TEMPLATE_PAGES = {
     'calculator.html': 'calculator.html',
     'learn.html': 'learn.html',
-    'more.html': 'more.html',
 }
